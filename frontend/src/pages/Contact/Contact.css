@@ -313,14 +313,6 @@
   font-size: 0.92rem;
 }
 
-.contact-page__submit i {
-  transition: transform 0.2s var(--ease-spring);
-}
-
-.contact-page__submit:hover i {
-  transform: translateX(3px) translateY(-1px);
-}
-
 /* ─── Responsive ─── */
 @media screen and (max-width: 780px) {
   .contact-page__body {

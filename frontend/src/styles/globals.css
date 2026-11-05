@@ -121,6 +121,16 @@ body {
 
 /* ─── Global Design System Utility Classes ─── */
 
+.btn-primary i,
+.btn-secondary i,
+.pill-filter-btn i {
+  pointer-events: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+}
+
 /* 1. Primary Action Button (Signature Solid Dark Pill) */
 .btn-primary {
   display: inline-flex;
