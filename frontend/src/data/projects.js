@@ -38,7 +38,7 @@ const projects = [
         id: 1,
         title: "Homepage Hero Section",
         description: "Header with navigation menu, search bar, and promotional banner showcasing products",
-        url: "/background7.jpg",
+        url: makeSvgPreview("Homepage Hero Section", "Header with navigation menu, search bar, and hero banner", "#ff9900"),
       },
       {
         id: 2,
