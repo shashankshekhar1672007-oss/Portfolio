@@ -1,4 +1,3 @@
-import { motion } from 'framer-motion'
 import './About.css'
 
 const socialLinks = [
@@ -128,7 +127,7 @@ export default function About() {
                       <span className="about-page__edu-degree">{degree}</span>
                       <div className="about-page__edu-meta">
                         <span className="about-page__edu-period">{period}</span>
-                        <span className="about-page__edu-grade panel panel--soft">{grade}</span>
+                        <span className="chip-badge about-page__edu-grade">{grade}</span>
                       </div>
                     </div>
                   </div>
@@ -141,9 +140,8 @@ export default function About() {
               </div>
               <div className="about-page__projects-grid">
                 {projects.map(({ name, year, desc, tags, icon }) => (
-                  <motion.div
+                  <div
                     key={name}
-                    whileHover={{ scale: 1.02, y: -2 }}
                     className="panel panel--soft about-page__project-item"
                   >
                     <div className="about-page__project-header">
@@ -154,10 +152,10 @@ export default function About() {
                     <p className="about-page__project-desc">{desc}</p>
                     <div className="about-page__project-tags">
                       {tags.map((t) => (
-                        <span key={t} className="about-page__project-tag panel panel--soft">{t}</span>
+                        <span key={t} className="chip-badge about-page__project-tag">{t}</span>
                       ))}
                     </div>
-                  </motion.div>
+                  </div>
                 ))}
               </div>
 
@@ -165,30 +163,26 @@ export default function About() {
               <div className="about-page__bottom-row">
                 <div className="about-page__social-links">
                   {socialLinks.map(({ label, href, icon }) => (
-                    <motion.a
+                    <a
                       key={label}
-                      whileHover={{ scale: 1.1, y: -2 }}
-                      whileTap={{ scale: 0.95 }}
-                      className="about-page__icn panel panel--soft"
+                      className="icon-circle-btn about-page__icn"
                       href={href}
                       target={href.startsWith('mailto:') ? undefined : '_blank'}
                       rel={href.startsWith('mailto:') ? undefined : 'noopener noreferrer'}
                       aria-label={label}
                     >
                       <i className={icon}></i>
-                    </motion.a>
+                    </a>
                   ))}
                 </div>
-                <motion.a
-                  whileHover={{ scale: 1.04 }}
-                  whileTap={{ scale: 0.97 }}
-                  className="about-page__resume-btn panel panel--thin"
+                <a
+                  className="btn-secondary about-page__resume-btn"
                   href="/Shashank_Resume.pdf"
                   download
                 >
                   <i className="fa-solid fa-file-arrow-down"></i>
                   Resume
-                </motion.a>
+                </a>
               </div>
 
             </div>
@@ -212,14 +206,13 @@ export default function About() {
               </div>
               <div className="about-page__skills">
                 {skills.map(({ label, icon }) => (
-                  <motion.span
+                  <span
                     key={label}
-                    whileHover={{ scale: 1.07, y: -2 }}
-                    className="about-page__skill-chip panel panel--soft"
+                    className="chip-badge chip-badge--interactive about-page__skill-chip"
                   >
                     <i className={icon}></i>
                     {label}
-                  </motion.span>
+                  </span>
                 ))}
               </div>
             </div>
@@ -231,19 +224,18 @@ export default function About() {
               </div>
               <div className="about-page__cp-ratings">
                 {cpRatings.map(({ platform, rating, icon, href, accentVar }) => (
-                  <motion.a
+                  <a
                     key={platform}
                     href={href}
                     target="_blank"
                     rel="noopener noreferrer"
-                    whileHover={{ scale: 1.05, y: -3 }}
-                    className="about-page__cp-card panel panel--soft"
+                    className="panel panel--soft about-page__cp-card"
                     style={{ '--cp-accent': `var(${accentVar})` }}
                   >
                     <i className={icon} style={{ color: `var(${accentVar})` }}></i>
                     <span className="about-page__cp-rating">{rating}</span>
                     <span className="about-page__cp-platform">{platform}</span>
-                  </motion.a>
+                  </a>
                 ))}
               </div>
             </div>

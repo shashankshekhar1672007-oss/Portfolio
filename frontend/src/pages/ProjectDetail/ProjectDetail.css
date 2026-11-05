@@ -11,21 +11,15 @@
 /* ─── Back button ─── */
 .project-detail__back {
   align-self: flex-start;
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  color: var(--muted-ink);
-  font-size: 0.875rem;
-  font-weight: 600;
-  font-family: var(--font-display);
-  cursor: pointer;
-  padding: 8px 16px;
-  transition: transform 0.2s ease, color 0.2s ease;
+  padding: 8px 18px;
 }
 
-.project-detail__back:hover {
-  color: var(--heading-ink);
-  transform: translateX(-4px);
+.project-detail__back i {
+  transition: transform 0.2s var(--ease-spring);
+}
+
+.project-detail__back:hover i {
+  transform: translateX(-3px);
 }
 
 /* ─── Outer panel wrapper ─── */
@@ -97,35 +91,7 @@
 }
 
 .project-detail__action-btn {
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-  padding: 11px 22px;
-  border-radius: 999px;
-  text-decoration: none;
-  font-family: var(--font-display);
-  font-weight: 700;
-  font-size: 0.875rem;
-  letter-spacing: 0.02em;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-  white-space: nowrap;
-}
-
-.project-detail__action-btn:hover {
-  transform: translateY(-2px);
-  box-shadow: var(--glass-shadow);
-}
-
-/* Primary — solid dark fill, matches Home CTA */
-.project-detail__action-btn--primary {
-  background: var(--heading-ink);
-  color: #fff;
-  border: none;
-}
-
-/* Secondary — uses .panel glass from globals in JSX */
-.project-detail__action-btn--secondary {
-  color: var(--ink);
+  /* Inherits .btn-primary and .btn-secondary from globals.css */
 }
 
 /* ─── Screenshots ─── */
@@ -171,7 +137,7 @@
   cursor: pointer;
   overflow: hidden;
   padding: 0;
-  transition: border-color 0.2s ease;
+  transition: var(--transition-base);
 }
 
 .project-detail__thumbnail img {
@@ -181,11 +147,14 @@
 }
 
 .project-detail__thumbnail:hover {
-  border-color: var(--glass-border);
+  border-color: var(--card-hover-border);
+  transform: var(--lift-btn);
 }
 
 .project-detail__thumbnail--active {
   border-color: var(--heading-ink);
+  transform: var(--lift-btn);
+  box-shadow: 0 4px 14px rgba(15, 17, 36, 0.22);
 }
 
 /* ─── Tech + Info grid ─── */
@@ -330,20 +299,7 @@
 }
 
 .project-detail__nav-link {
-  color: var(--muted-ink);
-  text-decoration: none;
-  font-weight: 600;
-  font-size: 0.875rem;
-  font-family: var(--font-display);
-  padding: 10px 20px;
-  border-radius: 999px;
-  transition: background 0.2s ease, color 0.2s ease, transform 0.2s ease;
-}
-
-.project-detail__nav-link:hover {
-  background: var(--glass-bg);
-  color: var(--heading-ink);
-  transform: translateX(-4px);
+  /* Inherits .btn-secondary from globals.css */
 }
 
 /* ─── Error state ─── */

@@ -127,50 +127,11 @@
 }
 
 .gh-tracker__filter-btn {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  padding: 8px 18px;
-  font-size: 0.875rem;
-  font-weight: 600;
-  font-family: var(--font-display);
-  color: var(--heading-ink);
-  background: rgba(255, 255, 255, 0.55);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border: 1px solid rgba(255, 255, 255, 0.85);
-  border-radius: 999px;
-  cursor: pointer;
-  box-shadow: 0 2px 8px rgba(67, 86, 132, 0.08);
-  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
-  outline: none;
-  user-select: none;
+  /* Inherits .pill-filter-btn from globals.css */
 }
 
-.gh-tracker__filter-btn:hover {
-  background: rgba(255, 255, 255, 0.85);
-  color: var(--heading-ink);
-  border-color: rgba(130, 170, 255, 0.6);
-  transform: translateY(-1.5px);
-  box-shadow: 0 4px 12px rgba(67, 86, 132, 0.14);
-}
-
-.gh-tracker__filter-btn--active {
-  background: var(--heading-ink) !important;
-  background-image: none !important;
-  color: #ffffff !important;
-  border-color: var(--heading-ink) !important;
-  box-shadow: 0 4px 16px rgba(20, 21, 38, 0.28) !important;
-  transform: translateY(-1px);
-}
-
-.gh-tracker__filter-btn--active:hover {
-  background: #000000 !important;
-  color: #ffffff !important;
-}
-
-.gh-tracker__filter-btn--active .gh-tracker__lang-dot {
-  box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.5);
+.pill-filter-btn--active .gh-tracker__lang-dot {
+  box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.6);
 }
 
 .gh-tracker__lang-dot {
@@ -197,11 +158,13 @@
   gap: 16px;
   border: 1px solid var(--glass-border);
   position: relative;
+  transition: var(--transition-base);
 }
 
 .gh-card:hover {
+  transform: var(--lift-card);
   border-color: var(--card-hover-border);
-  box-shadow: 0 12px 30px rgba(67, 86, 132, 0.14);
+  box-shadow: var(--shadow-card-hover);
 }
 
 .gh-card__header {
@@ -289,30 +252,13 @@
 }
 
 .gh-card__action-btn {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  padding: 7px 14px;
+  padding: 7px 16px;
   font-size: 0.8rem;
-  font-weight: 600;
-  text-decoration: none;
-  color: var(--ink);
-  transition: transform 0.15s ease, background 0.15s ease;
-}
-
-.gh-card__action-btn:hover {
-  transform: translateY(-1px);
 }
 
 .gh-card__action-btn--live {
-  background: var(--heading-ink);
-  color: #ffffff;
-  border-radius: 20px;
-}
-
-.gh-card__action-btn--live:hover {
-  background: #000000;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  padding: 7px 16px;
+  font-size: 0.8rem;
 }
 
 /* ─── Skeletons ─── */

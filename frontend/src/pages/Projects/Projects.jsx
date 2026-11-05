@@ -27,14 +27,14 @@ export default function Projects() {
           <div className="projects-page__sort-controls">
             <span className="projects-page__sort-label">Sort:</span>
             <button
-              className={`projects-page__sort-btn${sortOrder === 'newest' ? ' projects-page__sort-btn--active' : ''}`}
+              className={`pill-filter-btn projects-page__sort-btn${sortOrder === 'newest' ? ' pill-filter-btn--active' : ''}`}
               onClick={() => setSortOrder('newest')}
             >
               <i className="fa-solid fa-arrow-down-wide-short"></i>
               Newest
             </button>
             <button
-              className={`projects-page__sort-btn${sortOrder === 'oldest' ? ' projects-page__sort-btn--active' : ''}`}
+              className={`pill-filter-btn projects-page__sort-btn${sortOrder === 'oldest' ? ' pill-filter-btn--active' : ''}`}
               onClick={() => setSortOrder('oldest')}
             >
               <i className="fa-solid fa-arrow-up-wide-short"></i>

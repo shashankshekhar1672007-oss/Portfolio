@@ -37,7 +37,7 @@ export default function Home() {
             <span className="highlight">Always {text}</span>
             <span className="cursor">|</span>
           </p>
-          <a className="home__hero-action" href="#work" onClick={handleViewWorkClick}>
+          <a className="btn-primary home__hero-action" href="#work" onClick={handleViewWorkClick}>
             <i className="fa-solid fa-arrow-down"></i>
             View work
           </a>
@@ -74,7 +74,7 @@ export default function Home() {
 
         {projects.length > 3 && (
           <div className="home__view-all-wrapper">
-            <Link to="/projects" className="home__view-all-btn panel panel--soft">
+            <Link to="/projects" className="btn-secondary home__view-all-btn">
               <span>View All Projects</span>
               <i className="fa-solid fa-arrow-right"></i>
             </Link>

@@ -1,5 +1,4 @@
 import { NavLink } from 'react-router-dom'
-import { motion } from 'framer-motion'
 import './Footer.css'
 
 const navLinks = [
@@ -12,7 +11,8 @@ const navLinks = [
 const socialLinks = [
   { label: 'GitHub',   href: 'https://github.com/shashankshekhar1672007-oss',                icon: 'fa-brands fa-github'   },
   { label: 'LinkedIn', href: 'https://www.linkedin.com/in/shashank-shekhar-singh-405959377/', icon: 'fa-brands fa-linkedin' },
-  { label: 'Email',    href: 'mailto:shashank.shekhar.1672007@gmail.com',                     icon: 'fa-solid fa-envelope'  },
+  { label: 'LeetCode', href: 'https://leetcode.com/u/shashank_shekhar_16072007/',           icon: 'fa-solid fa-code'      },
+  { label: 'Email',    href: 'mailto:shashank.shekhar.1672007@gmail.com',                    icon: 'fa-solid fa-envelope'  },
 ]
 
 export default function Footer() {
@@ -50,18 +50,16 @@ export default function Footer() {
             <h3 className="footer__section-title">Connect</h3>
             <div className="footer__social-links">
               {socialLinks.map(({ label, href, icon }) => (
-                <motion.a
+                <a
                   key={label}
-                  whileHover={{ scale: 1.1 }}
-                  whileTap={{ scale: 0.95 }}
                   href={href}
                   target={href.startsWith('mailto:') ? undefined : '_blank'}
                   rel={href.startsWith('mailto:') ? undefined : 'noopener noreferrer'}
-                  className="footer__social-link panel panel--soft"
+                  className="icon-circle-btn footer__social-link"
                   aria-label={label}
                 >
                   <i className={icon}></i>
-                </motion.a>
+                </a>
               ))}
             </div>
           </div>
@@ -71,8 +69,12 @@ export default function Footer() {
         <div className="footer__divider" />
 
         <div className="footer__bottom">
-          <p className="footer__copyright">&copy; {currentYear} SynMorphic. All rights reserved.</p>
-          <p className="footer__credit">Crafted by Shashank</p>
+          <p className="footer__copyright">
+            © {currentYear} Shashank Shekhar Singh. All rights reserved.
+          </p>
+          <p className="footer__credit">
+            Built with React, Vite &amp; Passion.
+          </p>
         </div>
 
       </div>

@@ -1,4 +1,3 @@
-import { motion } from 'framer-motion'
 import { useState } from 'react'
 import './Contact.css'
 
@@ -129,10 +128,8 @@ export default function Contact() {
 
               <div className="contact-page__links">
                 {contactLinks.map(({ label, href, icon }) => (
-                  <motion.a
+                  <a
                     key={label}
-                    whileHover={{ x: 4 }}
-                    whileTap={{ scale: 0.97 }}
                     className="contact-page__link"
                     href={href}
                     target={href.startsWith('mailto:') ? undefined : '_blank'}
@@ -143,7 +140,7 @@ export default function Contact() {
                     </span>
                     <span className="contact-page__link-label">{label}</span>
                     <i className="fa-solid fa-arrow-right contact-page__link-arrow"></i>
-                  </motion.a>
+                  </a>
                 ))}
               </div>
             </div>
@@ -304,15 +301,13 @@ export default function Contact() {
                 </label>
 
                 {/* Submit */}
-                <motion.button
+                <button
                   type="submit"
-                  whileHover={{ scale: 1.03 }}
-                  whileTap={{ scale: 0.97 }}
-                  className="contact-page__submit panel panel--thin"
+                  className="btn-primary contact-page__submit"
                 >
                   <i className="fa-solid fa-paper-plane"></i>
                   Send message
-                </motion.button>
+                </button>
 
               </form>
             </div>

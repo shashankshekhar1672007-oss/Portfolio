@@ -97,26 +97,11 @@
 /* ─── Social icons ─── */
 .footer__social-links {
   display: flex;
-  gap: 12px;
+  gap: 10px;
 }
 
-/* Glass base comes from .panel.panel--soft in JSX; only layout + color here */
 .footer__social-link {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 36px;
-  height: 36px;
-  border-radius: 50%;
-  color: var(--ink);
-  text-decoration: none;
-  font-size: 1rem;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
-
-.footer__social-link:hover {
-  transform: translateY(-2px);
-  box-shadow: var(--glass-shadow);
+  /* Inherits .icon-circle-btn from globals.css */
 }
 
 /* ─── Divider ─── */

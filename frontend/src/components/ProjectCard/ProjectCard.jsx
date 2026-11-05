@@ -21,18 +21,18 @@ export default function ProjectCard({ id, title, description, link, thumbnail, d
             </Link>
           </h3>
           {dateFormatted && (
-            <span className="panel panel--soft project-card__date">{dateFormatted}</span>
+            <span className="chip-badge project-card__date">{dateFormatted}</span>
           )}
         </div>
         <p className="project-card__body">{description}</p>
       </div>
       <div className="project-card__actions">
-        <Link to={`/projects/${id}`} className="project-card__btn project-card__btn--primary">
+        <Link to={`/projects/${id}`} className="btn-primary project-card__btn">
           View Details
         </Link>
         {link && (
           <a
-            className="panel project-card__btn project-card__btn--external"
+            className="btn-secondary project-card__btn"
             href={link}
             target="_blank"
             rel="noreferrer"

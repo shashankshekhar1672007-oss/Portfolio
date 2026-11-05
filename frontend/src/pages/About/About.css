@@ -186,46 +186,53 @@
 .about-page__projects-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 10px;
+  gap: 12px;
 }
 
 .about-page__project-item {
-  padding: 14px 15px;
+  padding: 16px 18px;
   border-radius: 14px;
   display: flex;
   flex-direction: column;
-  gap: 6px;
+  gap: 8px;
   cursor: default;
+  transition: var(--transition-base);
+}
+
+.about-page__project-item:hover {
+  transform: var(--lift-card);
+  border-color: var(--card-hover-border);
+  box-shadow: var(--shadow-glass-hover);
 }
 
 .about-page__project-header {
   display: flex;
   align-items: center;
-  gap: 7px;
+  gap: 8px;
 }
 
 .about-page__project-header i {
-  font-size: 0.9rem;
+  font-size: 0.95rem;
   color: var(--muted-ink);
   flex-shrink: 0;
 }
 
 .about-page__project-name {
-  font-size: 0.88rem;
+  font-size: 0.92rem;
   font-weight: 700;
   color: var(--heading-ink);
   flex: 1;
 }
 
 .about-page__project-year {
-  font-size: 0.68rem;
+  font-size: 0.72rem;
   font-weight: 600;
   color: var(--light-ink);
 }
 
 .about-page__project-desc {
-  font-size: 0.77rem;
-  line-height: 1.5;
+  font-size: 0.8rem;
+  line-height: 1.55;
   color: var(--muted-ink);
   margin: 0;
   flex: 1;
@@ -234,16 +241,13 @@
 .about-page__project-tags {
   display: flex;
   flex-wrap: wrap;
-  gap: 4px;
-  margin-top: 2px;
+  gap: 5px;
+  margin-top: 4px;
 }
 
 .about-page__project-tag {
-  font-size: 0.66rem;
-  font-weight: 600;
-  padding: 2px 8px;
-  border-radius: 999px;
-  color: var(--ink);
+  font-size: 0.7rem;
+  padding: 3px 9px;
 }
 
 /* ─── Bottom row ─── */
@@ -253,43 +257,20 @@
   justify-content: space-between;
   gap: 16px;
   flex-wrap: wrap;
+  padding-top: 6px;
 }
 
 .about-page__social-links {
   display: flex;
-  gap: 12px;
+  gap: 10px;
 }
 
 .about-page__icn {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 44px;
-  height: 44px;
-  border-radius: 50%;
-  color: var(--ink);
-  text-decoration: none;
-  font-size: 20px;
-  transition: transform 0.2s ease;
-}
-
-.about-page__icn:hover {
-  transform: translateY(-2px);
+  /* Inherits .icon-circle-btn from globals.css */
 }
 
 .about-page__resume-btn {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  padding: 10px 20px;
-  border-radius: 999px;
-  font-size: 0.84rem;
-  font-weight: 700;
-  letter-spacing: 0.03em;
-  color: var(--ink);
-  text-decoration: none;
-  font-family: var(--font-display);
-  transition: transform 0.2s ease;
+  /* Inherits .btn-secondary from globals.css */
 }
 
 /* ─── Profile image ─── */
@@ -312,20 +293,11 @@
 .about-page__skills {
   display: flex;
   flex-wrap: wrap;
-  gap: 7px;
+  gap: 8px;
 }
 
 .about-page__skill-chip {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  padding: 5px 12px;
-  border-radius: 999px;
-  font-size: 0.8rem;
-  font-weight: 600;
-  color: var(--ink);
-  cursor: default;
-  user-select: none;
+  /* Inherits .chip-badge from globals.css */
 }
 
 .about-page__skill-chip i {
@@ -337,7 +309,7 @@
 .about-page__cp-ratings {
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: 10px;
 }
 
 .about-page__cp-card {
@@ -345,12 +317,18 @@
   flex-direction: row;
   align-items: center;
   gap: 12px;
-  padding: 11px 14px;
+  padding: 12px 16px;
   border-radius: 14px;
   text-decoration: none;
   position: relative;
   overflow: hidden;
-  transition: transform 0.2s ease;
+  transition: var(--transition-base);
+}
+
+.about-page__cp-card:hover {
+  transform: var(--lift-card);
+  border-color: var(--card-hover-border);
+  box-shadow: var(--shadow-card-hover);
 }
 
 .about-page__cp-card::before {
@@ -359,25 +337,25 @@
   left: 0;
   top: 0;
   bottom: 0;
-  width: 3px;
+  width: 3.5px;
   background: var(--cp-accent, transparent);
   border-radius: 3px 0 0 3px;
 }
 
 .about-page__cp-card i {
-  font-size: 1.1rem;
+  font-size: 1.15rem;
   flex-shrink: 0;
 }
 
 .about-page__cp-platform {
-  font-size: 0.78rem;
+  font-size: 0.82rem;
   font-weight: 600;
   color: var(--light-ink);
   flex: 1;
 }
 
 .about-page__cp-rating {
-  font-size: 1rem;
+  font-size: 1.05rem;
   font-weight: 700;
   color: var(--heading-ink);
 }

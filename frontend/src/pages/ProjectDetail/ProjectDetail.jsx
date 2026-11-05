@@ -30,7 +30,7 @@ export default function ProjectDetail() {
 
       {/* Back */}
       <button
-        className="panel panel--soft project-detail__back"
+        className="btn-secondary project-detail__back"
         onClick={() => navigate(-1)}
       >
         <i className="fa-solid fa-arrow-left"></i>
@@ -44,7 +44,7 @@ export default function ProjectDetail() {
             <h1 className="project-detail__title">{project.title}</h1>
             <p className="project-detail__meta">
               <span className="project-detail__year">{project.dateFormatted || project.year}</span>
-              <span className="panel panel--soft project-detail__status">{project.status}</span>
+              <span className="chip-badge project-detail__status">{project.status}</span>
             </p>
             <p className="project-detail__description">{project.description}</p>
           </div>
@@ -55,7 +55,7 @@ export default function ProjectDetail() {
                 href={project.link}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="project-detail__action-btn project-detail__action-btn--primary"
+                className="btn-primary project-detail__action-btn"
               >
                 <i className="fa-solid fa-arrow-up-right-from-square"></i>
                 View Live
@@ -66,7 +66,7 @@ export default function ProjectDetail() {
                 href={project.github}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="panel panel--soft project-detail__action-btn project-detail__action-btn--secondary"
+                className="btn-secondary project-detail__action-btn"
               >
                 <i className="fa-brands fa-github"></i>
                 View Code
@@ -115,7 +115,7 @@ export default function ProjectDetail() {
             </h2>
             <div className="project-detail__tech-stack">
               {project.technologies.map((tech, index) => (
-                <span key={index} className="panel panel--soft project-detail__tech-tag">
+                <span key={index} className="chip-badge chip-badge--interactive project-detail__tech-tag">
                   {tech}
                 </span>
               ))}
@@ -201,7 +201,7 @@ export default function ProjectDetail() {
 
       {/* Footer */}
       <div className="project-detail__footer">
-        <Link to="/projects" className="project-detail__nav-link">
+        <Link to="/projects" className="btn-secondary project-detail__nav-link">
           ← Back to All Projects
         </Link>
       </div>

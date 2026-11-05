@@ -54,25 +54,17 @@
 }
 
 .home__hero-action {
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
   margin-top: 28px;
-  padding: 12px 24px;
-  border-radius: 999px;
-  background: var(--heading-ink);
-  color: #fff;
-  text-decoration: none;
-  font-weight: 700;
-  font-family: var(--font-display);
-  font-size: 0.9rem;
-  letter-spacing: 0.02em;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  padding: 12px 28px;
+  font-size: 0.95rem;
 }
 
-.home__hero-action:hover {
-  transform: translateY(-2px);
-  box-shadow: var(--glass-shadow);
+.home__hero-action i {
+  transition: transform 0.2s var(--ease-spring);
+}
+
+.home__hero-action:hover i {
+  transform: translateY(2px);
 }
 
 /* ─── Scroll cue ─── */
@@ -142,22 +134,16 @@
 }
 
 .home__view-all-btn {
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
   padding: 12px 28px;
   font-size: 0.95rem;
-  font-weight: 700;
-  color: var(--heading-ink);
-  text-decoration: none;
-  border-radius: 999px;
-  transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
 }
 
-.home__view-all-btn:hover {
-  transform: translateY(-2px);
-  box-shadow: var(--glass-shadow);
-  background: var(--panel-strong);
+.home__view-all-btn i {
+  transition: transform 0.2s var(--ease-spring);
+}
+
+.home__view-all-btn:hover i {
+  transform: translateX(3px);
 }
 
 /* ─── Responsive ─── */

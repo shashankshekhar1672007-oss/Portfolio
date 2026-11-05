@@ -2,7 +2,7 @@
 .project-card {
   position: relative;
   padding: 0 0 2.75rem;
-  transition: border-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
+  transition: var(--transition-base);
 }
 
 /* Subtle colour washes — using global glow tokens */
@@ -104,44 +104,19 @@
   gap: 10px;
   opacity: 0;
   z-index: 2;
-  transition: opacity 0.25s ease, transform 0.25s ease;
+  transition: opacity 0.22s var(--ease-spring), transform 0.22s var(--ease-spring);
   white-space: nowrap;
 }
 
 .project-card__btn {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  padding: 10px 22px;
-  text-decoration: none;
-  font-family: var(--font-display);
-  font-size: 0.85rem;
-  font-weight: 700;
-  letter-spacing: 0.02em;
-  border-radius: 999px;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
-
-.project-card__btn--primary {
-  background: var(--heading-ink);
-  color: #fff;
-}
-
-/* Secondary/external — glass from .panel in JSX */
-.project-card__btn--secondary {
-  color: var(--ink);
-}
-
-.project-card__btn:hover {
-  transform: translateY(-2px);
-  box-shadow: var(--glass-shadow);
+  /* Inherits .btn-primary and .btn-secondary from globals.css */
 }
 
 /* ─── Hover state ─── */
 .project-card:hover {
   border-color: var(--card-hover-border);
-  box-shadow: 0 22px 56px rgba(78, 105, 166, 0.18);
-  transform: translateY(-3px);
+  box-shadow: var(--shadow-card-hover);
+  transform: var(--lift-card);
 }
 
 .project-card:hover .project-card__actions {

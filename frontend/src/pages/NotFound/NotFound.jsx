@@ -16,7 +16,7 @@ export default function NotFound() {
         <p className="not-found__desc">
           The page you are looking for doesn't exist, has been moved, or is under construction.
         </p>
-        <Link to="/" className="not-found__btn">
+        <Link to="/" className="btn-primary not-found__btn">
           <i className="fa-solid fa-house"></i>
           Back to Home
         </Link>

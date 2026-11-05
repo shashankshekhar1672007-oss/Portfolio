@@ -124,29 +124,38 @@
   text-decoration: none;
   display: flex;
   align-items: center;
-  gap: 10px;
-  padding: 8px 6px;
+  gap: 12px;
+  padding: 10px 12px;
   border-radius: 12px;
-  transition: background 0.18s ease;
+  border: 1px solid transparent;
+  transition: var(--transition-base);
 }
 
 .contact-page__link:hover {
-  background: var(--glass-bg);
+  background: rgba(255, 255, 255, 0.65);
+  border-color: rgba(255, 255, 255, 0.85);
+  transform: translateX(3px);
+  box-shadow: 0 4px 12px rgba(67, 86, 132, 0.08);
 }
 
 .contact-page__icon {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 34px;
-  height: 34px;
-  font-size: 14px;
-  color: var(--ink);
+  width: 36px;
+  height: 36px;
+  font-size: 15px;
+  color: var(--heading-ink);
   flex-shrink: 0;
+  transition: var(--transition-base);
+}
+
+.contact-page__link:hover .contact-page__icon {
+  transform: translateY(-1px);
 }
 
 .contact-page__link-label {
-  font-size: 0.82rem;
+  font-size: 0.84rem;
   font-weight: 500;
   color: var(--muted-ink);
   flex: 1;
@@ -157,16 +166,17 @@
 }
 
 .contact-page__link-arrow {
-  font-size: 0.68rem;
+  font-size: 0.72rem;
   color: var(--light-ink);
   flex-shrink: 0;
-  transition: transform 0.18s ease, opacity 0.18s ease;
+  transition: transform 0.2s var(--ease-spring), opacity 0.2s var(--ease-spring);
   opacity: 0.4;
 }
 
 .contact-page__link:hover .contact-page__link-arrow {
-  opacity: 0.8;
-  transform: translateX(3px);
+  opacity: 1;
+  color: var(--heading-ink);
+  transform: translateX(4px);
 }
 
 /* ─── RIGHT — form ─── */
@@ -295,22 +305,20 @@
   color: var(--light-ink);
 }
 
-/* Submit — .panel.panel--thin gives the pill shape */
+/* Submit — inherits .btn-primary from globals.css */
 .contact-page__submit {
   align-self: flex-start;
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  padding: 11px 26px;
-  font-size: 0.9rem;
-  font-weight: 700;
-  font-family: var(--font-display);
-  letter-spacing: 0.02em;
-  color: var(--ink);
-  background: transparent;
-  border: none;
-  cursor: pointer;
-  margin-top: 4px;
+  margin-top: 8px;
+  padding: 12px 28px;
+  font-size: 0.92rem;
+}
+
+.contact-page__submit i {
+  transition: transform 0.2s var(--ease-spring);
+}
+
+.contact-page__submit:hover i {
+  transform: translateX(3px) translateY(-1px);
 }
 
 /* ─── Responsive ─── */

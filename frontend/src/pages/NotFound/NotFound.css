@@ -43,24 +43,6 @@
 }
 
 .not-found__btn {
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-  margin-top: 10px;
+  margin-top: 12px;
   padding: 12px 28px;
-  font-size: 1rem;
-  font-weight: 600;
-  color: #ffffff;
-  background: var(--heading-ink);
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  border-radius: 999px;
-  text-decoration: none;
-  cursor: pointer;
-  transition: transform 0.2s ease, opacity 0.2s ease, box-shadow 0.2s ease;
-}
-
-.not-found__btn:hover {
-  opacity: 0.9;
-  transform: translateY(-2px);
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
 }

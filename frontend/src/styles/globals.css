@@ -1,23 +1,40 @@
 :root {
   --font-display: "Funnel Display", sans-serif;
   --page-bg: #e9edf7;
-  --ink: #121427;
-  --light-ink:#67686b;
-  --muted-ink: #1e293b;
-  --heading-ink: #141526;
+  --ink: #14162b;
+  --light-ink: #5e6479;
+  --muted-ink: #2b304c;
+  --heading-ink: #0f1124;
   --panel: rgba(246, 249, 255, 0.58);
-  --panel-strong: rgba(255, 255, 255, 0.74);
+  --panel-strong: rgba(255, 255, 255, 0.78);
   --cream: #f7f9ff;
   --cream-light: #f2f6ff;
   --card-border: rgba(255, 255, 255, 0.78);
-  --card-hover-border: rgba(130, 170, 255, 0.7);
-  --glass-bg: rgba(255, 255, 255, 0.34);
+  --card-hover-border: rgba(130, 170, 255, 0.65);
+  --glass-bg: rgba(255, 255, 255, 0.38);
   --glass-border: rgba(255, 255, 255, 0.72);
   --glass-shadow: 0 28px 80px rgba(67, 86, 132, 0.2);
   --blue-glow: rgba(114, 183, 255, 0.42);
   --pink-glow: rgba(255, 191, 221, 0.44);
   --background-end: #ffffff;
   --background-fade-height: clamp(260px, 24vw, 520px);
+
+  /* ─── Standard Motion & Interaction Tokens ─── */
+  --ease-spring: cubic-bezier(0.16, 1, 0.3, 1);
+  --transition-fast: all 0.15s var(--ease-spring);
+  --transition-base: all 0.22s var(--ease-spring);
+  --transition-smooth: all 0.32s var(--ease-spring);
+
+  /* Hover lifts */
+  --lift-btn: translateY(-2px);
+  --lift-card: translateY(-3px);
+  --lift-chip: translateY(-1.5px);
+
+  /* Shadows */
+  --shadow-btn: 0 4px 14px rgba(15, 17, 36, 0.15);
+  --shadow-btn-hover: 0 8px 24px rgba(15, 17, 36, 0.24);
+  --shadow-glass-hover: 0 8px 24px rgba(67, 86, 132, 0.16);
+  --shadow-card-hover: 0 20px 48px rgba(67, 86, 132, 0.18);
 }
 
 *, *::before, *::after {
@@ -32,12 +49,19 @@ body,
 h1,
 h2,
 h3,
+h4,
 p {
   margin: 0;
 }
 
 html {
   overflow-y: scroll;
+  scroll-behavior: smooth;
+}
+
+::selection {
+  background: rgba(130, 170, 255, 0.35);
+  color: var(--heading-ink);
 }
 
 body {
@@ -54,6 +78,8 @@ body {
   position: relative;
   color: var(--ink);
   overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 #root {
@@ -63,21 +89,22 @@ body {
   z-index: 1;
 }
 
+/* ─── Standard Glass Panel ─── */
 .panel {
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0.46), rgba(255, 255, 255, 0.06));
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.1));
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
   border: 1px solid var(--glass-border);
-  border-top: 1px solid rgba(255, 255, 255, 0.5);
+  border-top: 1px solid rgba(255, 255, 255, 0.85);
   border-radius: 16px;
-  box-shadow: var(--glass-shadow), 0 6px 18px rgba(20, 21, 38, 0.06);
+  box-shadow: var(--glass-shadow), 0 6px 18px rgba(20, 21, 38, 0.05);
   background-clip: border-box;
   font-size: 16px;
   font-weight: 500;
   line-height: 1.6;
   letter-spacing: 0.5px;
   color: var(--ink);
-  transition: transform 0.18s ease, box-shadow 0.18s ease, opacity 0.18s ease;
+  transition: transform 0.22s var(--ease-spring), box-shadow 0.22s var(--ease-spring), border-color 0.22s var(--ease-spring);
 }
 
 .panel--soft {
@@ -90,6 +117,206 @@ body {
 
 .panel--thin {
   border-radius: 999px;
+}
+
+/* ─── Global Design System Utility Classes ─── */
+
+/* 1. Primary Action Button (Signature Solid Dark Pill) */
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  padding: 10px 24px;
+  border-radius: 999px;
+  background: var(--heading-ink);
+  color: #ffffff !important;
+  border: 1px solid var(--heading-ink);
+  font-family: var(--font-display);
+  font-size: 0.875rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  text-decoration: none;
+  cursor: pointer;
+  box-shadow: var(--shadow-btn);
+  transition: var(--transition-base);
+  outline: none;
+  user-select: none;
+  white-space: nowrap;
+}
+
+.btn-primary:hover {
+  transform: var(--lift-btn);
+  background: #000000;
+  border-color: #000000;
+  box-shadow: var(--shadow-btn-hover);
+  color: #ffffff !important;
+}
+
+.btn-primary:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 8px rgba(15, 17, 36, 0.2);
+}
+
+/* 2. Secondary Button (Frosted Glass Pill) */
+.btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 10px 22px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.6);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  color: var(--heading-ink);
+  border: 1px solid rgba(255, 255, 255, 0.88);
+  font-family: var(--font-display);
+  font-size: 0.875rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  text-decoration: none;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(67, 86, 132, 0.08);
+  transition: var(--transition-base);
+  outline: none;
+  user-select: none;
+  white-space: nowrap;
+}
+
+.btn-secondary:hover {
+  transform: var(--lift-btn);
+  background: rgba(255, 255, 255, 0.92);
+  border-color: var(--card-hover-border);
+  box-shadow: var(--shadow-glass-hover);
+  color: var(--heading-ink);
+}
+
+.btn-secondary:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 6px rgba(67, 86, 132, 0.1);
+}
+
+/* 3. Filter & Sort Toggle Pill */
+.pill-filter-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 18px;
+  font-size: 0.875rem;
+  font-weight: 600;
+  font-family: var(--font-display);
+  color: var(--heading-ink);
+  background: rgba(255, 255, 255, 0.6);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.85);
+  border-radius: 999px;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(67, 86, 132, 0.08);
+  transition: var(--transition-base);
+  outline: none;
+  user-select: none;
+  white-space: nowrap;
+}
+
+.pill-filter-btn:hover {
+  background: rgba(255, 255, 255, 0.9);
+  color: var(--heading-ink);
+  border-color: var(--card-hover-border);
+  transform: var(--lift-btn);
+  box-shadow: var(--shadow-glass-hover);
+}
+
+.pill-filter-btn--active {
+  background: var(--heading-ink) !important;
+  background-image: none !important;
+  color: #ffffff !important;
+  border-color: var(--heading-ink) !important;
+  box-shadow: 0 4px 16px rgba(15, 17, 36, 0.28) !important;
+  transform: var(--lift-btn);
+}
+
+.pill-filter-btn--active:hover {
+  background: #000000 !important;
+  border-color: #000000 !important;
+  box-shadow: var(--shadow-btn-hover) !important;
+  color: #ffffff !important;
+}
+
+/* 4. Interactive Chip / Badge */
+.chip-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 5px 13px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.55);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.8);
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--ink);
+  box-shadow: 0 2px 6px rgba(67, 86, 132, 0.05);
+  transition: var(--transition-base);
+  user-select: none;
+}
+
+.chip-badge--interactive {
+  cursor: default;
+}
+
+.chip-badge--interactive:hover {
+  transform: var(--lift-chip);
+  background: rgba(255, 255, 255, 0.9);
+  border-color: var(--card-hover-border);
+  box-shadow: 0 4px 12px rgba(67, 86, 132, 0.12);
+  color: var(--heading-ink);
+}
+
+/* 5. Circular Icon Button */
+.icon-circle-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.55);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.85);
+  color: var(--heading-ink);
+  font-size: 1.15rem;
+  text-decoration: none;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(67, 86, 132, 0.08);
+  transition: var(--transition-base);
+  outline: none;
+  flex-shrink: 0;
+}
+
+.icon-circle-btn:hover {
+  transform: var(--lift-btn);
+  background: rgba(255, 255, 255, 0.92);
+  border-color: var(--card-hover-border);
+  box-shadow: var(--shadow-glass-hover);
+  color: var(--heading-ink);
+}
+
+.icon-circle-btn:active {
+  transform: translateY(0);
+}
+
+/* ─── Accessibility Focus Ring ─── */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible {
+  outline: 2px solid rgba(130, 170, 255, 0.9);
+  outline-offset: 2px;
 }
 
 @media (max-width: 768px) {

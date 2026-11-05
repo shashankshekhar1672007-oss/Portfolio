@@ -139,7 +139,7 @@ export default function GitHubTracker() {
           {languages.map((lang) => (
             <button
               key={lang}
-              className={`gh-tracker__filter-btn${selectedLang === lang ? ' gh-tracker__filter-btn--active' : ''}`}
+              className={`pill-filter-btn gh-tracker__filter-btn${selectedLang === lang ? ' pill-filter-btn--active' : ''}`}
               onClick={() => setSelectedLang(lang)}
             >
               {lang !== 'All' && (
@@ -174,7 +174,7 @@ export default function GitHubTracker() {
             href={`https://github.com/${GITHUB_USERNAME}?tab=repositories`}
             target="_blank"
             rel="noopener noreferrer"
-            className="gh-tracker__action-btn"
+            className="btn-primary gh-tracker__action-btn"
           >
             View on GitHub
           </a>
@@ -185,10 +185,8 @@ export default function GitHubTracker() {
       {!loading && !error && (
         <div className="gh-tracker__grid">
           {filteredRepos.map((repo) => (
-            <motion.article
+            <article
               key={repo.id}
-              whileHover={{ y: -3, scale: 1.01 }}
-              transition={{ duration: 0.2 }}
               className="panel panel--soft gh-card"
             >
               <div className="gh-card__header">
@@ -203,7 +201,7 @@ export default function GitHubTracker() {
                     {repo.name}
                   </a>
                 </div>
-                <span className="panel panel--soft gh-card__visibility">
+                <span className="chip-badge gh-card__visibility">
                   {repo.visibility || 'Public'}
                 </span>
               </div>
@@ -249,7 +247,7 @@ export default function GitHubTracker() {
                   href={repo.html_url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="panel panel--soft gh-card__action-btn"
+                  className="btn-secondary gh-card__action-btn"
                 >
                   <i className="fa-brands fa-github"></i>
                   <span>Repository</span>
@@ -260,14 +258,14 @@ export default function GitHubTracker() {
                     href={repo.homepage}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="gh-card__action-btn gh-card__action-btn--live"
+                    className="btn-primary gh-card__action-btn gh-card__action-btn--live"
                   >
                     <i className="fa-solid fa-arrow-up-right-from-square"></i>
                     <span>Live Demo</span>
                   </a>
                 )}
               </div>
-            </motion.article>
+            </article>
           ))}
         </div>
       )}
