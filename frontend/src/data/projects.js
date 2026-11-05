@@ -1,4 +1,15 @@
 function makeSvgPreview(title, subtitle, accentColor = '#38bdf8') {
+  const safeTitle = String(title)
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;')
+  const safeSubtitle = String(subtitle)
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;')
+
   const svg = `<svg xmlns="http://www.w3.org/2000/svg" width="800" height="500" viewBox="0 0 800 500">
     <defs>
       <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
@@ -15,8 +26,8 @@ function makeSvgPreview(title, subtitle, accentColor = '#38bdf8') {
     <rect x="24" y="24" width="752" height="452" rx="20" fill="none" stroke="rgba(255,255,255,0.12)" stroke-width="1.5"/>
     <circle cx="400" cy="195" r="44" fill="${accentColor}" fill-opacity="0.15" stroke="${accentColor}" stroke-width="2"/>
     <text x="400" y="206" font-family="-apple-system, system-ui, BlinkMacSystemFont, sans-serif" font-size="28" font-weight="700" fill="${accentColor}" text-anchor="middle">✦</text>
-    <text x="400" y="280" font-family="-apple-system, system-ui, BlinkMacSystemFont, sans-serif" font-size="26" font-weight="700" fill="#f8fafc" text-anchor="middle">${title}</text>
-    <text x="400" y="318" font-family="-apple-system, system-ui, BlinkMacSystemFont, sans-serif" font-size="15" font-weight="500" fill="#94a3b8" text-anchor="middle">${subtitle}</text>
+    <text x="400" y="280" font-family="-apple-system, system-ui, BlinkMacSystemFont, sans-serif" font-size="26" font-weight="700" fill="#f8fafc" text-anchor="middle">${safeTitle}</text>
+    <text x="400" y="318" font-family="-apple-system, system-ui, BlinkMacSystemFont, sans-serif" font-size="15" font-weight="500" fill="#94a3b8" text-anchor="middle">${safeSubtitle}</text>
   </svg>`
   return `data:image/svg+xml;utf8,${encodeURIComponent(svg)}`
 }
@@ -24,6 +35,57 @@ function makeSvgPreview(title, subtitle, accentColor = '#38bdf8') {
 const projects = [
   {
     id: 1,
+    title: "MediLink",
+    shortDescription: "A telemedicine and healthcare platform for patient record management and online medical consultations.",
+    description: "MediLink is a telemedicine platform built to connect patients and healthcare professionals seamlessly. It offers appointment scheduling, real-time consultation features, and secure patient medical history management with a clean, accessible user interface.",
+    fullDescription: "MediLink was engineered to streamline healthcare access. Patients can find certified doctors, schedule video appointments, and maintain their digital prescription history. The architecture prioritizes data privacy, responsiveness across mobile and desktop devices, and low-latency interaction.",
+    link: "https://shashankshekhar1672007-oss.github.io/MediLink/",
+    github: "https://github.com/shashankshekhar1672007-oss/MediLink",
+    technologies: ["React.js", "Vite", "JavaScript ES6", "CSS Modules", "Responsive Design", "REST APIs"],
+    duration: "4 weeks",
+    role: "Solo Developer",
+    screenshots: [
+      {
+        id: 1,
+        title: "Patient Dashboard",
+        description: "Overview of upcoming appointments, doctor availability, and medical history",
+        url: makeSvgPreview("Patient Dashboard", "Upcoming consultations, records, and appointment bookings", "#06b6d4"),
+      },
+      {
+        id: 2,
+        title: "Doctor Directory",
+        description: "Search and filter certified healthcare professionals by specialty and rating",
+        url: makeSvgPreview("Doctor Directory", "Search, filter, and view availability for specialists", "#3b82f6"),
+      },
+      {
+        id: 3,
+        title: "Consultation Portal",
+        description: "Secure medical consultation interface with real-time prescription view",
+        url: makeSvgPreview("Consultation Portal", "Real-time communication and digital prescriptions", "#10b981"),
+      },
+    ],
+    features: [
+      "Intuitive doctor discovery with specialty and availability filtering",
+      "Interactive appointment booking and scheduling calendar",
+      "Digital prescription management and historical medical records",
+      "Fully responsive and mobile-accessible interface",
+      "Clean modular CSS architecture with optimized asset delivery",
+    ],
+    challenges: [
+      "Designing an empathetic and accessible UI suitable for diverse demographics",
+      "Managing complex appointment and filter states across multiple components",
+      "Optimizing load performance for fast emergency access on mobile networks",
+    ],
+    learnings: [
+      "Component-driven development in modern React 18 / Vite architecture",
+      "Accessibility best practices (WCAG) for healthcare portals",
+      "Effective state management and data structuring for user profiles",
+    ],
+    status: "Completed",
+    year: 2026,
+  },
+  {
+    id: 2,
     title: "Amazon Clone",
     shortDescription: "A pixel-perfect recreation of Amazon's homepage built with pure HTML5 and CSS3 to master layout and design principles.",
     description: "I built this Amazon homepage clone as a capstone project to test my understanding of HTML5 and CSS3. My goal was to replicate a complex, real-world layout without relying on frameworks. This project helped me understand the importance of box model, positioning, and structuring a content-heavy webpage.",
@@ -86,10 +148,74 @@ const projects = [
       "Performance optimization techniques for faster page loads",
     ],
     status: "Completed",
-    year: 2023,
+    year: 2026,
   },
   {
-    id: 2,
+    id: 3,
+    title: "Tic Tac Toe",
+    shortDescription: "A fully functional Tic Tac Toe game with intelligent win detection algorithm, turn management, and game state tracking.",
+    description: "I developed this Tic Tac Toe game to practice handling complex logic in JavaScript. The project features a dynamic game loop that tracks player turns, detects winning combinations across rows, columns, and diagonals, and identifies draw conditions automatically.",
+    fullDescription: "This was a significant step up in complexity from my previous games. Tic Tac Toe required sophisticated algorithms to detect all possible winning combinations, manage a 2D board state, and prevent invalid moves. I implemented a game engine that handles turn alternation, validates moves, and determines game outcomes accurately. This project taught me how to think algorithmically and debug complex game logic.",
+    link: "https://shashankshekhar1672007-oss.github.io/TicTacToe/",
+    github: "https://github.com/shashankshekhar1672007-oss/TicTacToe",
+    technologies: ["JavaScript ES6", "DOM Manipulation", "Algorithm Design", "CSS3 Animations", "HTML5", "Game Logic"],
+    duration: "2 weeks",
+    role: "Solo Developer",
+    screenshots: [
+      {
+        id: 1,
+        title: "Game Board",
+        description: "3x3 interactive grid where players place their marks (X or O)",
+        url: makeSvgPreview("Interactive Grid", "3x3 dynamic board with active cell tracking and move validation", "#6366f1"),
+      },
+      {
+        id: 2,
+        title: "Win Detection",
+        description: "Board showing winning combination highlighted with visual feedback",
+        url: makeSvgPreview("Win State Algorithm", "Line highlight algorithm evaluating 8 possible win combinations", "#10b981"),
+      },
+      {
+        id: 3,
+        title: "Game Over Screen",
+        description: "Winner announcement with replay button and game statistics",
+        url: makeSvgPreview("Game Over State", "Match statistics and instant reset trigger", "#f43f5e"),
+      },
+    ],
+    features: [
+      "Dynamic 3x3 game board with clickable cells",
+      "Automatic win detection across all rows, columns, and both diagonals",
+      "Draw condition detection when all cells are filled without a winner",
+      "Turn tracking system alternating between X and O players",
+      "Prevention of overwriting already-played cells",
+      "Visual highlighting of winning combination",
+      "Game reset functionality to start new games",
+      "Turn indicator showing whose turn it is",
+      "Completely responsive on all device sizes",
+      "Keyboard support for accessibility",
+    ],
+    challenges: [
+      "Implementing an efficient win-detection algorithm checking 8 possible winning combinations",
+      "Managing a 2D board state represented as a 1D array",
+      "Validating user moves and preventing overwrites elegantly",
+      "Handling edge cases like simultaneous clicking or double-clicks",
+      "Debugging complex nested loops and conditional logic",
+      "Ensuring turn management doesn't get corrupted",
+    ],
+    learnings: [
+      "Algorithm design and optimization techniques",
+      "Array manipulation and iteration patterns",
+      "Index calculations for 2D board representation",
+      "Complex conditional logic and nested loops",
+      "Game state management and validation",
+      "Debugging strategies for logic-heavy code",
+      "User input validation and edge case handling",
+      "Code organization for complex JavaScript applications",
+    ],
+    status: "Completed",
+    year: 2026,
+  },
+  {
+    id: 4,
     title: "Rock Paper Scissors",
     shortDescription: "An interactive game featuring DOM manipulation, real-time score tracking, and dynamic computer AI with instant feedback.",
     description: "I built this interactive Rock Paper Scissors game to practice DOM manipulation and fundamental game logic. Using JavaScript, I created functions to handle user input, generate a random computer choice, and compare results to determine the winner dynamically.",
@@ -150,68 +276,47 @@ const projects = [
     year: 2023,
   },
   {
-    id: 3,
-    title: "Tic Tac Toe",
-    shortDescription: "A fully functional Tic Tac Toe game with intelligent win detection algorithm, turn management, and game state tracking.",
-    description: "I developed this Tic Tac Toe game to practice handling complex logic in JavaScript. The project features a dynamic game loop that tracks player turns, detects winning combinations across rows, columns, and diagonals, and identifies draw conditions automatically.",
-    fullDescription: "This was a significant step up in complexity from my previous games. Tic Tac Toe required sophisticated algorithms to detect all possible winning combinations, manage a 2D board state, and prevent invalid moves. I implemented a game engine that handles turn alternation, validates moves, and determines game outcomes accurately. This project taught me how to think algorithmically and debug complex game logic.",
-    link: "https://shashankshekhar1672007-oss.github.io/TicTacToe/",
-    github: "https://github.com/shashankshekhar1672007-oss/TicTacToe",
-    technologies: ["JavaScript ES6", "DOM Manipulation", "Algorithm Design", "CSS3 Animations", "HTML5", "Game Logic"],
+    id: 5,
+    title: "CubicNotes",
+    shortDescription: "A fast, minimalist note-taking application designed for productivity, clean organization, and seamless thought capture.",
+    description: "CubicNotes is a modern web application designed for organizing notes, tasks, and ideas with speed and simplicity. It features instant search, categorical tagging, and markdown editing capabilities.",
+    fullDescription: "CubicNotes was built to provide a clean, distraction-free writing environment. Focused on lightning-fast interaction and intuitive categorization, it allows users to draft, format, and organize their personal and technical thoughts with ease.",
+    link: "https://cubicnotes.vercel.app",
+    github: "https://github.com/shashankshekhar1672007-oss/cubicnotes",
+    technologies: ["React.js", "Vite", "JavaScript ES6", "CSS3", "Vercel Deployment"],
     duration: "2 weeks",
     role: "Solo Developer",
     screenshots: [
       {
         id: 1,
-        title: "Game Board",
-        description: "3x3 interactive grid where players place their marks (X or O)",
-        url: makeSvgPreview("Interactive Grid", "3x3 dynamic board with active cell tracking & move validation", "#6366f1"),
+        title: "Note Editor",
+        description: "Distraction-free note composition and rich formatting",
+        url: makeSvgPreview("Note Workspace", "Clean markdown editor and distraction-free writing canvas", "#8b5cf6"),
       },
       {
         id: 2,
-        title: "Win Detection",
-        description: "Board showing winning combination highlighted with visual feedback",
-        url: makeSvgPreview("Win State Algorithm", "Line highlight algorithm evaluating 8 possible win combinations", "#10b981"),
-      },
-      {
-        id: 3,
-        title: "Game Over Screen",
-        description: "Winner announcement with replay button and game statistics",
-        url: makeSvgPreview("Game Over State", "Match statistics and instant reset trigger", "#f43f5e"),
+        title: "Tagging & Search",
+        description: "Instant real-time search across all archived notes and tags",
+        url: makeSvgPreview("Categorization Engine", "Fast query search with multi-tag filtering", "#a855f7"),
       },
     ],
     features: [
-      "Dynamic 3x3 game board with clickable cells",
-      "Automatic win detection across all rows, columns, and both diagonals",
-      "Draw condition detection when all cells are filled without a winner",
-      "Turn tracking system alternating between X and O players",
-      "Prevention of overwriting already-played cells",
-      "Visual highlighting of winning combination",
-      "Game reset functionality to start new games",
-      "Turn indicator showing whose turn it is",
-      "Completely responsive on all device sizes",
-      "Keyboard support for accessibility",
+      "Distraction-free, responsive writing interface",
+      "Real-time note filtering and instant search",
+      "Tag-based classification system",
+      "Local storage persistence and quick recovery",
+      "Sleek minimalist UI aesthetic",
     ],
     challenges: [
-      "Implementing an efficient win-detection algorithm checking 8 possible winning combinations",
-      "Managing a 2D board state represented as a 1D array",
-      "Validating user moves and preventing overwrites elegantly",
-      "Handling edge cases like simultaneous clicking or double-clicks",
-      "Debugging complex nested loops and conditional logic",
-      "Ensuring turn management doesn't get corrupted",
+      "Building a performant search filter across growing text entries",
+      "Crafting an uncluttered interface that stays productive on mobile viewports",
     ],
     learnings: [
-      "Algorithm design and optimization techniques",
-      "Array manipulation and iteration patterns",
-      "Index calculations for 2D board representation",
-      "Complex conditional logic and nested loops",
-      "Game state management and validation",
-      "Debugging strategies for logic-heavy code",
-      "User input validation and edge case handling",
-      "Code organization for complex JavaScript applications",
+      "Performance optimization for real-time text input handling in React",
+      "Designing clean minimalist design systems",
     ],
     status: "Completed",
-    year: 2023,
+    year: 2026,
   },
 ]
 

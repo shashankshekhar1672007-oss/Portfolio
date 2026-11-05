@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react'
+import { Link } from 'react-router-dom'
 import ProjectCard from '../../components/ProjectCard/ProjectCard'
 import GlassSeparator from '../../components/GlassSeparator/GlassSeparator'
 import { useTypingEffect } from './useTypingEffect'
@@ -10,6 +11,9 @@ const TYPING_WORDS = ['building.', 'learning.', 'coding.']
 export default function Home() {
   const text = useTypingEffect(TYPING_WORDS)
   const [isScrolled, setIsScrolled] = useState(false)
+
+  // Show only the 3 most recent projects on the Home page
+  const recentProjects = projects.slice(0, 3)
 
   useEffect(() => {
     const handleScroll = () => setIsScrolled(window.scrollY > 20)
@@ -53,8 +57,9 @@ export default function Home() {
           <h2 className="home__projects-title">My Work</h2>
           <GlassSeparator />
         </div>
+
         <div className="home__card-grid">
-          {projects.map((project) => (
+          {recentProjects.map((project) => (
             <ProjectCard
               key={project.id}
               id={project.id}
@@ -65,6 +70,15 @@ export default function Home() {
             />
           ))}
         </div>
+
+        {projects.length > 3 && (
+          <div className="home__view-all-wrapper">
+            <Link to="/projects" className="home__view-all-btn panel panel--soft">
+              <span>View All Projects</span>
+              <i className="fa-solid fa-arrow-right"></i>
+            </Link>
+          </div>
+        )}
       </div>
     </main>
   )
