@@ -43,7 +43,7 @@ export default function ProjectDetail() {
           <div className="project-detail__header">
             <h1 className="project-detail__title">{project.title}</h1>
             <p className="project-detail__meta">
-              <span className="project-detail__year">{project.year}</span>
+              <span className="project-detail__year">{project.dateFormatted || project.year}</span>
               <span className="panel panel--soft project-detail__status">{project.status}</span>
             </p>
             <p className="project-detail__description">{project.description}</p>

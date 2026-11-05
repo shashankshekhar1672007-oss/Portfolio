@@ -67,6 +67,7 @@ export default function Home() {
               description={project.shortDescription}
               link={project.link}
               thumbnail={project.screenshots?.[0]?.url}
+              dateFormatted={project.dateFormatted}
             />
           ))}
         </div>

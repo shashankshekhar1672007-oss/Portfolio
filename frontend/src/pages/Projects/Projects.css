@@ -16,10 +16,18 @@
 
 .projects-page__header {
   display: flex;
-  flex-direction: column;
-  gap: 6px;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 20px;
   border-bottom: 1px solid rgba(255, 255, 255, 0.4);
   padding-bottom: 20px;
+  flex-wrap: wrap;
+}
+
+.projects-page__title-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
 }
 
 .projects-page__title {
@@ -33,6 +41,45 @@
   font-size: 1rem;
   color: var(--light-ink);
   margin: 0;
+}
+
+/* ─── Sorting Controls ─── */
+.projects-page__sort-controls {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.projects-page__sort-label {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--light-ink);
+  margin-right: 4px;
+}
+
+.projects-page__sort-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 7px 14px;
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--ink);
+  background: transparent;
+  border: 1px solid var(--glass-border);
+  cursor: pointer;
+  transition: all 0.18s ease;
+}
+
+.projects-page__sort-btn:hover {
+  background: var(--panel-strong);
+  transform: translateY(-1px);
+}
+
+.projects-page__sort-btn--active {
+  background: var(--heading-ink);
+  color: #ffffff;
+  border-color: var(--heading-ink);
 }
 
 .projects-page__grid {
@@ -50,6 +97,11 @@
 
   .projects-page__panel {
     padding: 24px 16px;
+  }
+
+  .projects-page__header {
+    flex-direction: column;
+    align-items: flex-start;
   }
 
   .projects-page__title {

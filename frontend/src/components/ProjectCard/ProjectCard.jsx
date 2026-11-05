@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom'
 import './ProjectCard.css'
 
-export default function ProjectCard({ id, title, description, link, thumbnail }) {
+export default function ProjectCard({ id, title, description, link, thumbnail, dateFormatted }) {
   return (
     <article className="panel project-card">
       {thumbnail && (
@@ -10,7 +10,12 @@ export default function ProjectCard({ id, title, description, link, thumbnail })
         </div>
       )}
       <div className="project-card__details">
-        <h3 className="project-card__title">{title}</h3>
+        <div className="project-card__header-row">
+          <h3 className="project-card__title">{title}</h3>
+          {dateFormatted && (
+            <span className="panel panel--soft project-card__date">{dateFormatted}</span>
+          )}
+        </div>
         <p className="project-card__body">{description}</p>
       </div>
       <div className="project-card__actions">

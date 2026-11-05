@@ -38,10 +38,102 @@ function makeSvgPreview(title, subtitle, accentColor = '#38bdf8') {
   return `data:image/svg+xml;utf8,${encodeURIComponent(svg)}`
 }
 
-const projects = [
+const rawProjects = [
   {
     id: 1,
+    title: "Graph Visualizer C++",
+    date: "2026-11-05",
+    dateFormatted: "Nov 2026",
+    year: 2026,
+    shortDescription: "A header-only C++ graph algorithm visualizer with terminal parsing and automated Graphviz diagram generation.",
+    description: "Built while studying graph data structures and competitive programming algorithms. It parses undirected or directed graph input from standard terminal streams and automatically renders visual diagrams with Graphviz whenever plot() is invoked.",
+    fullDescription: "A lightweight, header-only C++20 utility developed to visually debug complex graph traversals like BFS, DFS, Dijkstra, and cycle detection algorithms. Designed with zero runtime overhead, it interfaces cleanly with Graphviz's dot engine to generate instant graph representations.",
+    link: null,
+    github: "https://github.com/shashankshekhar1672007-oss/graph_viz_cpp",
+    technologies: ["C++20", "Graph Algorithms", "Graphviz", "CLI Tools", "Data Structures"],
+    duration: "1 week",
+    role: "Solo Developer",
+    screenshots: [
+      {
+        id: 1,
+        title: "Graph Rendering",
+        description: "Visual node-edge diagram output generated dynamically via Graphviz dot engine",
+        url: makeSvgPreview("Graph Rendering", "Dynamic node and edge visualization with Graphviz", "#ef4444"),
+      },
+      {
+        id: 2,
+        title: "Terminal Input Parser",
+        description: "CLI stream reader parsing adjacency lists and weighted edges",
+        url: makeSvgPreview("CLI Parser", "Reads adjacency lists and edge matrices from standard input", "#f97316"),
+      },
+    ],
+    features: [
+      "Header-only integration for seamless inclusion in algorithmic solutions",
+      "Dynamic plotting of directed, undirected, and weighted graphs",
+      "Automatic execution of Graphviz dot to generate image output",
+      "Zero external runtime dependencies beyond standard C++ libraries",
+    ],
+    challenges: [
+      "Formatting clean DOT language syntax programmatically from in-memory representations",
+      "Handling edge-case disconnected subgraphs and self-loops gracefully",
+    ],
+    learnings: [
+      "Advanced C++ template metaprogramming and standard library I/O manipulation",
+      "Inter-process communication and piping to system visualization binaries",
+    ],
+    status: "Completed",
+  },
+  {
+    id: 2,
+    title: "CubicNotes",
+    date: "2026-07-14",
+    dateFormatted: "Jul 2026",
+    year: 2026,
+    shortDescription: "A fast, minimalist note-taking application designed for productivity, clean organization, and seamless thought capture.",
+    description: "CubicNotes is a modern web application designed for organizing notes, tasks, and ideas with speed and simplicity. It features instant search, categorical tagging, and markdown editing capabilities.",
+    fullDescription: "CubicNotes was built to provide a clean, distraction-free writing environment. Focused on lightning-fast interaction and intuitive categorization, it allows users to draft, format, and organize their personal and technical thoughts with ease.",
+    link: "https://cubicnotes.vercel.app",
+    github: "https://github.com/shashankshekhar1672007-oss/cubicnotes",
+    technologies: ["React.js", "Vite", "JavaScript ES6", "CSS3", "Vercel Deployment"],
+    duration: "2 weeks",
+    role: "Solo Developer",
+    screenshots: [
+      {
+        id: 1,
+        title: "Note Editor",
+        description: "Distraction-free note composition and rich formatting",
+        url: makeSvgPreview("Note Workspace", "Clean markdown editor and distraction-free writing canvas", "#8b5cf6"),
+      },
+      {
+        id: 2,
+        title: "Tagging & Search",
+        description: "Instant real-time search across all archived notes and tags",
+        url: makeSvgPreview("Categorization Engine", "Fast query search with multi-tag filtering", "#a855f7"),
+      },
+    ],
+    features: [
+      "Distraction-free, responsive writing interface",
+      "Real-time note filtering and instant search",
+      "Tag-based classification system",
+      "Local storage persistence and quick recovery",
+      "Sleek minimalist UI aesthetic",
+    ],
+    challenges: [
+      "Building a performant search filter across growing text entries",
+      "Crafting an uncluttered interface that stays productive on mobile viewports",
+    ],
+    learnings: [
+      "Performance optimization for real-time text input handling in React",
+      "Designing clean minimalist design systems",
+    ],
+    status: "Completed",
+  },
+  {
+    id: 3,
     title: "MediLink",
+    date: "2026-05-22",
+    dateFormatted: "May 2026",
+    year: 2026,
     shortDescription: "A telemedicine and healthcare platform for patient record management and online medical consultations.",
     description: "MediLink is a telemedicine platform built to connect patients and healthcare professionals seamlessly. It offers appointment scheduling, real-time consultation features, and secure patient medical history management with a clean, accessible user interface.",
     fullDescription: "MediLink was engineered to streamline healthcare access. Patients can find certified doctors, schedule video appointments, and maintain their digital prescription history. The architecture prioritizes data privacy, responsiveness across mobile and desktop devices, and low-latency interaction.",
@@ -88,11 +180,13 @@ const projects = [
       "Effective state management and data structuring for user profiles",
     ],
     status: "Completed",
-    year: 2026,
   },
   {
-    id: 2,
+    id: 4,
     title: "Amazon Clone",
+    date: "2026-01-24",
+    dateFormatted: "Jan 2026",
+    year: 2026,
     shortDescription: "A pixel-perfect recreation of Amazon's homepage built with pure HTML5 and CSS3 to master layout and design principles.",
     description: "I built this Amazon homepage clone as a capstone project to test my understanding of HTML5 and CSS3. My goal was to replicate a complex, real-world layout without relying on frameworks. This project helped me understand the importance of box model, positioning, and structuring a content-heavy webpage.",
     fullDescription: "This was my first major frontend project where I challenged myself to recreate Amazon's homepage without using any frameworks. The focus was on understanding fundamental web technologies and how professional websites structure their layouts. I spent significant time studying the HTML hierarchy, CSS styling techniques, and responsive design patterns used by real-world applications. The project taught me not just how to build, but how to think about scalable, maintainable front-end architecture.",
@@ -154,11 +248,13 @@ const projects = [
       "Performance optimization techniques for faster page loads",
     ],
     status: "Completed",
-    year: 2026,
   },
   {
-    id: 3,
+    id: 5,
     title: "Tic Tac Toe",
+    date: "2026-01-23",
+    dateFormatted: "Jan 2026",
+    year: 2026,
     shortDescription: "A fully functional Tic Tac Toe game with intelligent win detection algorithm, turn management, and game state tracking.",
     description: "I developed this Tic Tac Toe game to practice handling complex logic in JavaScript. The project features a dynamic game loop that tracks player turns, detects winning combinations across rows, columns, and diagonals, and identifies draw conditions automatically.",
     fullDescription: "This was a significant step up in complexity from my previous games. Tic Tac Toe required sophisticated algorithms to detect all possible winning combinations, manage a 2D board state, and prevent invalid moves. I implemented a game engine that handles turn alternation, validates moves, and determines game outcomes accurately. This project taught me how to think algorithmically and debug complex game logic.",
@@ -218,11 +314,13 @@ const projects = [
       "Code organization for complex JavaScript applications",
     ],
     status: "Completed",
-    year: 2026,
   },
   {
-    id: 4,
+    id: 6,
     title: "Rock Paper Scissors",
+    date: "2026-01-20",
+    dateFormatted: "Jan 2026",
+    year: 2026,
     shortDescription: "An interactive game featuring DOM manipulation, real-time score tracking, and dynamic computer AI with instant feedback.",
     description: "I built this interactive Rock Paper Scissors game to practice DOM manipulation and fundamental game logic. Using JavaScript, I created functions to handle user input, generate a random computer choice, and compare results to determine the winner dynamically.",
     fullDescription: "This project marked my transition from static HTML/CSS to dynamic JavaScript. I learned how to make web pages interactive by listening to user events, updating the DOM in real-time, and managing game state. The project included score tracking, win/loss streak detection, and visual feedback animations to enhance user experience.",
@@ -279,51 +377,12 @@ const projects = [
       "CSS animations and transitions for interactive feedback",
     ],
     status: "Completed",
-    year: 2023,
-  },
-  {
-    id: 5,
-    title: "CubicNotes",
-    shortDescription: "A fast, minimalist note-taking application designed for productivity, clean organization, and seamless thought capture.",
-    description: "CubicNotes is a modern web application designed for organizing notes, tasks, and ideas with speed and simplicity. It features instant search, categorical tagging, and markdown editing capabilities.",
-    fullDescription: "CubicNotes was built to provide a clean, distraction-free writing environment. Focused on lightning-fast interaction and intuitive categorization, it allows users to draft, format, and organize their personal and technical thoughts with ease.",
-    link: "https://cubicnotes.vercel.app",
-    github: "https://github.com/shashankshekhar1672007-oss/cubicnotes",
-    technologies: ["React.js", "Vite", "JavaScript ES6", "CSS3", "Vercel Deployment"],
-    duration: "2 weeks",
-    role: "Solo Developer",
-    screenshots: [
-      {
-        id: 1,
-        title: "Note Editor",
-        description: "Distraction-free note composition and rich formatting",
-        url: makeSvgPreview("Note Workspace", "Clean markdown editor and distraction-free writing canvas", "#8b5cf6"),
-      },
-      {
-        id: 2,
-        title: "Tagging & Search",
-        description: "Instant real-time search across all archived notes and tags",
-        url: makeSvgPreview("Categorization Engine", "Fast query search with multi-tag filtering", "#a855f7"),
-      },
-    ],
-    features: [
-      "Distraction-free, responsive writing interface",
-      "Real-time note filtering and instant search",
-      "Tag-based classification system",
-      "Local storage persistence and quick recovery",
-      "Sleek minimalist UI aesthetic",
-    ],
-    challenges: [
-      "Building a performant search filter across growing text entries",
-      "Crafting an uncluttered interface that stays productive on mobile viewports",
-    ],
-    learnings: [
-      "Performance optimization for real-time text input handling in React",
-      "Designing clean minimalist design systems",
-    ],
-    status: "Completed",
-    year: 2026,
   },
 ]
+
+// Pre-sorted by date: newest first
+const projects = [...rawProjects].sort(
+  (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()
+)
 
 export default projects
