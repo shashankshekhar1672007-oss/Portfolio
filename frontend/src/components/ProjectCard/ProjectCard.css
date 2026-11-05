@@ -1,0 +1,121 @@
+/* ─── Project Card ─── */
+.project-card {
+  position: relative;
+  padding: 0 0 2.75rem;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+/* Subtle colour washes — using global glow tokens */
+.project-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background:
+    radial-gradient(circle at 18% 100%, var(--pink-glow), transparent 42%),
+    radial-gradient(circle at 88% 16%,  var(--blue-glow), transparent 34%);
+  opacity: 0.6;
+  pointer-events: none;
+}
+
+/* ─── Thumbnail ─── */
+.project-card__thumbnail {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  border-top-left-radius: inherit;
+  border-top-right-radius: inherit;
+  margin-bottom: 1.25rem;
+}
+
+.project-card__thumbnail-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.4s ease;
+}
+
+.project-card:hover .project-card__thumbnail-img {
+  transform: scale(1.04);
+}
+
+/* ─── Content ─── */
+.project-card__details {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 0 1.5rem;
+}
+
+.project-card__title {
+  font-size: 1.375rem;
+  font-weight: 700;
+  color: var(--heading-ink);
+  margin: 0;
+}
+
+.project-card__body {
+  font-size: 0.95rem;
+  font-weight: 400;
+  color: var(--muted-ink);
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* ─── Actions (revealed on hover) ─── */
+.project-card__actions {
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 10px;
+  opacity: 0;
+  z-index: 2;
+  transition: opacity 0.25s ease, transform 0.25s ease;
+  white-space: nowrap;
+}
+
+.project-card__btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 22px;
+  text-decoration: none;
+  font-family: var(--font-display);
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  border-radius: 999px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.project-card__btn--primary {
+  background: var(--heading-ink);
+  color: #fff;
+}
+
+/* Secondary/external — glass from .panel in JSX */
+.project-card__btn--secondary {
+  color: var(--ink);
+}
+
+.project-card__btn:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--glass-shadow);
+}
+
+/* ─── Hover state ─── */
+.project-card:hover {
+  border-color: var(--card-hover-border);
+  box-shadow: 0 22px 56px rgba(78, 105, 166, 0.18);
+  transform: translateY(-3px);
+}
+
+.project-card:hover .project-card__actions {
+  transform: translateX(-50%) translateY(50%);
+  opacity: 1;
+}

@@ -1,0 +1,93 @@
+:root {
+  --font-display: "Funnel Display", sans-serif;
+  --page-bg: #e9edf7;
+  --ink: #121427;
+  --light-ink:#67686b;
+  --muted-ink: #1e293b;
+  --heading-ink: #141526;
+  --panel: rgba(246, 249, 255, 0.58);
+  --panel-strong: rgba(255, 255, 255, 0.74);
+  --cream: #f7f9ff;
+  --cream-light: #f2f6ff;
+  --card-border: rgba(255, 255, 255, 0.78);
+  --card-hover-border: rgba(130, 170, 255, 0.7);
+  --glass-bg: rgba(255, 255, 255, 0.34);
+  --glass-border: rgba(255, 255, 255, 0.72);
+  --glass-shadow: 0 28px 80px rgba(67, 86, 132, 0.2);
+  --blue-glow: rgba(114, 183, 255, 0.42);
+  --pink-glow: rgba(255, 191, 221, 0.44);
+  --background-end: #ffffff;
+  --background-fade-height: clamp(260px, 24vw, 520px);
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+html, body, #root {
+  min-height: 100vh;
+}
+
+body,
+h1,
+h2,
+h3,
+p {
+  margin: 0;
+}
+
+html {
+  overflow-y: scroll;
+}
+
+body {
+  font-family: var(--font-display);
+  font-optical-sizing: auto;
+  font-weight: 600;
+  background-color: #ffffff;
+  background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0) 60%, rgba(255, 255, 255, 1) 100%), url('/background9.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  min-height: 100vh;
+  position: relative;
+  color: var(--ink);
+  overflow-x: hidden;
+}
+
+#root {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  z-index: 1;
+}
+
+.panel {
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.46), rgba(255, 255, 255, 0.06));
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid var(--glass-border);
+  border-top: 1px solid rgba(255, 255, 255, 0.5);
+  border-radius: 16px;
+  box-shadow: var(--glass-shadow), 0 6px 18px rgba(20, 21, 38, 0.06);
+  background-clip: border-box;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.6;
+  letter-spacing: 0.5px;
+  color: var(--ink);
+  transition: transform 0.18s ease, box-shadow 0.18s ease, opacity 0.18s ease;
+}
+
+.panel--soft {
+  border-radius: 20px;
+}
+
+.panel--circle {
+  border-radius: 50%;
+}
+
+.panel--thin {
+  border-radius: 999px;
+}

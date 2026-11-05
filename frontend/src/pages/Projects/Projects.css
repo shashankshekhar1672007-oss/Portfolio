@@ -1,0 +1,34 @@
+/* ─── Projects Page ─── */
+.projects-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 118px 20px 48px;
+}
+
+.projects-page__panel {
+  display: flex;
+  flex-direction: column;
+  width: min(1080px, 100%);
+  padding: 42px;
+  gap: 24px;
+}
+
+.projects-page__grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 40px;
+  width: 100%;
+  
+}
+
+/* ─── Responsive ─── */
+@media screen and (max-width: 600px) {
+  .projects-page {
+    padding: 96px 12px 36px;
+  }
+
+  .projects-page__panel {
+    padding: 24px 16px;
+  }
+}

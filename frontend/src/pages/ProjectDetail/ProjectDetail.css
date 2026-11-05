@@ -1,0 +1,405 @@
+/* ─── Project Detail Page ─── */
+.project-detail {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+  padding: 118px clamp(20px, 5vw, 60px) 60px;
+  min-height: 100vh;
+}
+
+/* ─── Back button ─── */
+.project-detail__back {
+  align-self: flex-start;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--muted-ink);
+  font-size: 0.875rem;
+  font-weight: 600;
+  font-family: var(--font-display);
+  cursor: pointer;
+  padding: 8px 16px;
+  transition: transform 0.2s ease, color 0.2s ease;
+}
+
+.project-detail__back:hover {
+  color: var(--heading-ink);
+  transform: translateX(-4px);
+}
+
+/* ─── Outer panel wrapper ─── */
+.project-detail__outer-panel {
+  padding: 16px;
+}
+
+.project-detail__outer-panel--wide {
+  width: min(932px, 100%);
+}
+
+/* ─── Header panel ─── */
+.project-detail__header-panel {
+  width: 100%;
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+
+.project-detail__header {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.project-detail__title {
+  font-size: clamp(2rem, 4vw, 3.5rem);
+  font-weight: 700;
+  color: var(--heading-ink);
+  margin: 0;
+  line-height: 1.15;
+}
+
+.project-detail__meta {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  margin: 0;
+  font-size: 0.875rem;
+}
+
+.project-detail__year {
+  color: var(--light-ink);
+  font-weight: 500;
+}
+
+.project-detail__status {
+  display: inline-block;
+  padding: 4px 12px;
+  color: var(--ink);
+  font-weight: 600;
+  font-size: 0.8rem;
+}
+
+.project-detail__description {
+  font-size: 1rem;
+  color: var(--muted-ink);
+  line-height: 1.7;
+  margin: 0;
+  font-weight: 400;
+}
+
+/* ─── Action buttons ─── */
+.project-detail__actions {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+.project-detail__action-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 11px 22px;
+  border-radius: 999px;
+  text-decoration: none;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 0.875rem;
+  letter-spacing: 0.02em;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  white-space: nowrap;
+}
+
+.project-detail__action-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--glass-shadow);
+}
+
+/* Primary — solid dark fill, matches Home CTA */
+.project-detail__action-btn--primary {
+  background: var(--heading-ink);
+  color: #fff;
+  border: none;
+}
+
+/* Secondary — uses .panel glass from globals in JSX */
+.project-detail__action-btn--secondary {
+  color: var(--ink);
+}
+
+/* ─── Screenshots ─── */
+.project-detail__screenshots-panel {
+  width: 100%;
+  padding: 28px;
+}
+
+.project-detail__screenshots {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.project-detail__main-screenshot {
+  width: 100%;
+  border-radius: 12px;
+  overflow: hidden;
+  aspect-ratio: 16 / 9;
+  background: var(--glass-bg);
+}
+
+.project-detail__image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.project-detail__thumbnail-list {
+  display: flex;
+  gap: 10px;
+  overflow-x: auto;
+  padding: 4px 0;
+}
+
+.project-detail__thumbnail {
+  flex-shrink: 0;
+  width: 96px;
+  height: 68px;
+  border-radius: 8px;
+  border: 2px solid transparent;
+  background: transparent;
+  cursor: pointer;
+  overflow: hidden;
+  padding: 0;
+  transition: border-color 0.2s ease;
+}
+
+.project-detail__thumbnail img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.project-detail__thumbnail:hover {
+  border-color: var(--glass-border);
+}
+
+.project-detail__thumbnail--active {
+  border-color: var(--heading-ink);
+}
+
+/* ─── Tech + Info grid ─── */
+.project-detail__grid {
+  width: min(932px, 100%);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.project-detail__section {
+  padding: 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.project-detail__section--tech  { grid-column: 1; }
+.project-detail__section--info  { grid-column: 2; }
+
+/* ─── Section title (shared across features / challenges / learnings) ─── */
+.project-detail__section-title {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--heading-ink);
+  margin: 0;
+}
+
+.project-detail__section-title i {
+  font-size: 1rem;
+  color: var(--light-ink);
+}
+
+/* ─── Technologies ─── */
+.project-detail__tech-stack {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.project-detail__tech-tag {
+  display: inline-block;
+  padding: 5px 14px;
+  border-radius: 999px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--ink);
+}
+
+/* ─── Info items ─── */
+.project-detail__info-item {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.project-detail__info-label {
+  font-size: 0.7rem;
+  font-weight: 700;
+  color: var(--light-ink);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin: 0;
+}
+
+.project-detail__info-value {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--heading-ink);
+  margin: 0;
+}
+
+/* ─── Features / Challenges / Learnings panels ─── */
+.project-detail__features-section,
+.project-detail__challenges-section,
+.project-detail__learnings-section {
+  width: 100%;
+}
+
+.project-detail__features-list,
+.project-detail__challenges-list,
+.project-detail__learnings-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.project-detail__feature-item,
+.project-detail__challenge-item,
+.project-detail__learning-item {
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+  font-size: 0.95rem;
+  font-weight: 400;
+  color: var(--muted-ink);
+  line-height: 1.65;
+}
+
+.project-detail__feature-icon {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+  background: var(--glass-bg);
+  border-radius: 50%;
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--heading-ink);
+  border: 1px solid var(--glass-border);
+}
+
+.project-detail__challenge-item::before {
+  content: "→";
+  flex-shrink: 0;
+  color: var(--heading-ink);
+  font-weight: 700;
+  width: 20px;
+}
+
+.project-detail__learning-item::before {
+  content: "💡";
+  flex-shrink: 0;
+  width: 20px;
+}
+
+/* ─── Footer ─── */
+.project-detail__footer {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding-top: 28px;
+  border-top: 1px solid var(--glass-border);
+}
+
+.project-detail__nav-link {
+  color: var(--muted-ink);
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.875rem;
+  font-family: var(--font-display);
+  padding: 10px 20px;
+  border-radius: 999px;
+  transition: background 0.2s ease, color 0.2s ease, transform 0.2s ease;
+}
+
+.project-detail__nav-link:hover {
+  background: var(--glass-bg);
+  color: var(--heading-ink);
+  transform: translateX(-4px);
+}
+
+/* ─── Error state ─── */
+.project-detail__error {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  text-align: center;
+  padding: 60px 20px;
+}
+
+.project-detail__error h2 {
+  font-size: 2rem;
+  color: var(--heading-ink);
+  margin: 0;
+}
+
+/* ─── Responsive ─── */
+@media (max-width: 768px) {
+  .project-detail {
+    padding: 96px 16px 40px;
+    gap: 16px;
+  }
+
+  .project-detail__outer-panel {
+    padding: 8px;
+  }
+
+  .project-detail__header-panel,
+  .project-detail__screenshots-panel,
+  .project-detail__section {
+    padding: 20px;
+  }
+
+  .project-detail__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .project-detail__section--tech,
+  .project-detail__section--info {
+    grid-column: auto;
+  }
+
+  .project-detail__actions {
+    flex-direction: column;
+  }
+
+  .project-detail__action-btn {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 600px) {
+  .project-detail {
+    padding: 96px 12px 36px;
+  }
+}
