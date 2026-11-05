@@ -121,43 +121,63 @@
 /* ─── Filters ─── */
 .gh-tracker__filters {
   display: flex;
-  gap: 8px;
+  gap: 10px;
   flex-wrap: wrap;
+  align-items: center;
 }
 
 .gh-tracker__filter-btn {
   display: inline-flex;
   align-items: center;
-  gap: 6px;
-  padding: 6px 14px;
-  font-size: 0.85rem;
+  gap: 8px;
+  padding: 8px 18px;
+  font-size: 0.875rem;
   font-weight: 600;
-  color: var(--ink);
-  border: 1px solid var(--glass-border);
-  background: transparent;
+  font-family: var(--font-display);
+  color: var(--heading-ink);
+  background: rgba(255, 255, 255, 0.55);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.85);
+  border-radius: 999px;
   cursor: pointer;
-  transition: background 0.18s ease, border-color 0.18s ease, transform 0.15s ease;
+  box-shadow: 0 2px 8px rgba(67, 86, 132, 0.08);
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  outline: none;
+  user-select: none;
 }
 
 .gh-tracker__filter-btn:hover {
-  background: var(--panel-strong);
-  transform: translateY(-1px);
+  background: rgba(255, 255, 255, 0.85);
+  color: var(--heading-ink);
+  border-color: rgba(130, 170, 255, 0.6);
+  transform: translateY(-1.5px);
+  box-shadow: 0 4px 12px rgba(67, 86, 132, 0.14);
 }
 
 .gh-tracker__filter-btn--active {
-  background: var(--heading-ink);
-  color: #ffffff;
-  border-color: var(--heading-ink);
+  background: var(--heading-ink) !important;
+  background-image: none !important;
+  color: #ffffff !important;
+  border-color: var(--heading-ink) !important;
+  box-shadow: 0 4px 16px rgba(20, 21, 38, 0.28) !important;
+  transform: translateY(-1px);
+}
+
+.gh-tracker__filter-btn--active:hover {
+  background: #000000 !important;
+  color: #ffffff !important;
 }
 
 .gh-tracker__filter-btn--active .gh-tracker__lang-dot {
-  box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.4);
+  box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.5);
 }
 
 .gh-tracker__lang-dot {
-  width: 8px;
-  height: 8px;
+  width: 9px;
+  height: 9px;
   border-radius: 50%;
+  flex-shrink: 0;
   display: inline-block;
 }
 

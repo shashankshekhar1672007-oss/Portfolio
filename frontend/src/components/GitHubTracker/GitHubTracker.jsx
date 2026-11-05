@@ -139,7 +139,7 @@ export default function GitHubTracker() {
           {languages.map((lang) => (
             <button
               key={lang}
-              className={`panel panel--soft gh-tracker__filter-btn${selectedLang === lang ? ' gh-tracker__filter-btn--active' : ''}`}
+              className={`gh-tracker__filter-btn${selectedLang === lang ? ' gh-tracker__filter-btn--active' : ''}`}
               onClick={() => setSelectedLang(lang)}
             >
               {lang !== 'All' && (
