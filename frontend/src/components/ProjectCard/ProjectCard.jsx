@@ -5,13 +5,21 @@ export default function ProjectCard({ id, title, description, link, thumbnail, d
   return (
     <article className="panel project-card">
       {thumbnail && (
-        <div className="project-card__thumbnail">
+        <Link
+          to={`/projects/${id}`}
+          className="project-card__thumbnail"
+          aria-label={`View ${title} project details`}
+        >
           <img src={thumbnail} alt={`${title} preview`} className="project-card__thumbnail-img" />
-        </div>
+        </Link>
       )}
       <div className="project-card__details">
         <div className="project-card__header-row">
-          <h3 className="project-card__title">{title}</h3>
+          <h3 className="project-card__title">
+            <Link to={`/projects/${id}`} className="project-card__title-link">
+              {title}
+            </Link>
+          </h3>
           {dateFormatted && (
             <span className="panel panel--soft project-card__date">{dateFormatted}</span>
           )}
