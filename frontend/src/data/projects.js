@@ -1,3 +1,26 @@
+function makeSvgPreview(title, subtitle, accentColor = '#38bdf8') {
+  const svg = `<svg xmlns="http://www.w3.org/2000/svg" width="800" height="500" viewBox="0 0 800 500">
+    <defs>
+      <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+        <stop offset="0%" stop-color="#141728"/>
+        <stop offset="100%" stop-color="#0b0d18"/>
+      </linearGradient>
+      <linearGradient id="glow" x1="0" y1="0" x2="1" y2="1">
+        <stop offset="0%" stop-color="${accentColor}" stop-opacity="0.3"/>
+        <stop offset="100%" stop-color="${accentColor}" stop-opacity="0"/>
+      </linearGradient>
+    </defs>
+    <rect width="800" height="500" fill="url(#bg)"/>
+    <circle cx="400" cy="190" r="140" fill="url(#glow)"/>
+    <rect x="24" y="24" width="752" height="452" rx="20" fill="none" stroke="rgba(255,255,255,0.12)" stroke-width="1.5"/>
+    <circle cx="400" cy="195" r="44" fill="${accentColor}" fill-opacity="0.15" stroke="${accentColor}" stroke-width="2"/>
+    <text x="400" y="206" font-family="-apple-system, system-ui, BlinkMacSystemFont, sans-serif" font-size="28" font-weight="700" fill="${accentColor}" text-anchor="middle">✦</text>
+    <text x="400" y="280" font-family="-apple-system, system-ui, BlinkMacSystemFont, sans-serif" font-size="26" font-weight="700" fill="#f8fafc" text-anchor="middle">${title}</text>
+    <text x="400" y="318" font-family="-apple-system, system-ui, BlinkMacSystemFont, sans-serif" font-size="15" font-weight="500" fill="#94a3b8" text-anchor="middle">${subtitle}</text>
+  </svg>`
+  return `data:image/svg+xml;utf8,${encodeURIComponent(svg)}`
+}
+
 const projects = [
   {
     id: 1,
@@ -21,19 +44,19 @@ const projects = [
         id: 2,
         title: "Featured Products Section",
         description: "Product grid with multiple category cards and responsive layout",
-        url: "https://via.placeholder.com/800x500?text=Product+Categories",
+        url: makeSvgPreview("Product Categories", "Multi-column responsive grid layout with dynamic category cards", "#f59e0b"),
       },
       {
         id: 3,
         title: "Navigation Bar",
         description: "Sticky header with search functionality, account menu, and navigation links",
-        url: "https://via.placeholder.com/800x500?text=Navigation+Bar",
+        url: makeSvgPreview("Navigation System", "Sticky responsive header bar with search and sub-menus", "#38bdf8"),
       },
       {
         id: 4,
         title: "Responsive Mobile View",
         description: "Mobile-optimized layout showing hamburger menu and condensed sections",
-        url: "https://via.placeholder.com/800x500?text=Mobile+View",
+        url: makeSvgPreview("Mobile Viewport", "Adapted flexbox/grid layout optimized for mobile screens", "#10b981"),
       },
     ],
     features: [
@@ -81,19 +104,19 @@ const projects = [
         id: 1,
         title: "Game Interface",
         description: "Main gameplay area with choice buttons (Rock, Paper, Scissors) and instant result display",
-        url: "https://via.placeholder.com/800x500?text=Game+Interface",
+        url: makeSvgPreview("Game Interface", "Interactive buttons with real-time feedback and state indicators", "#818cf8"),
       },
       {
         id: 2,
         title: "Score Display",
         description: "Real-time score tracker showing player wins, computer wins, and draws",
-        url: "https://via.placeholder.com/800x500?text=Score+Tracker",
+        url: makeSvgPreview("Score Tracker", "Live score evaluation board comparing player vs computer stats", "#ec4899"),
       },
       {
         id: 3,
         title: "Winner Announcement",
         description: "Dynamic message display showing who won each round with visual animation",
-        url: "https://via.placeholder.com/800x500?text=Winner+Display",
+        url: makeSvgPreview("Result Animation", "Round result banner with animated win/loss feedback", "#06b6d4"),
       },
     ],
     features: [
@@ -142,19 +165,19 @@ const projects = [
         id: 1,
         title: "Game Board",
         description: "3x3 interactive grid where players place their marks (X or O)",
-        url: "https://via.placeholder.com/800x500?text=Game+Board",
+        url: makeSvgPreview("Interactive Grid", "3x3 dynamic board with active cell tracking & move validation", "#6366f1"),
       },
       {
         id: 2,
         title: "Win Detection",
         description: "Board showing winning combination highlighted with visual feedback",
-        url: "https://via.placeholder.com/800x500?text=Win+State",
+        url: makeSvgPreview("Win State Algorithm", "Line highlight algorithm evaluating 8 possible win combinations", "#10b981"),
       },
       {
         id: 3,
         title: "Game Over Screen",
         description: "Winner announcement with replay button and game statistics",
-        url: "https://via.placeholder.com/800x500?text=Game+Over",
+        url: makeSvgPreview("Game Over State", "Match statistics and instant reset trigger", "#f43f5e"),
       },
     ],
     features: [

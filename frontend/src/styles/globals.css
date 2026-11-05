@@ -91,3 +91,9 @@ body {
 .panel--thin {
   border-radius: 999px;
 }
+
+@media (max-width: 768px) {
+  body {
+    background-attachment: scroll;
+  }
+}
