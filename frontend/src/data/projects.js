@@ -1,3 +1,5 @@
+import { SYNMORPHIC_LOGO_B64 } from './logoBase64'
+
 function makeSvgPreview(title, subtitle, accentColor = '#38bdf8') {
   const safeTitle = String(title)
     .replace(/&/g, '&amp;')
@@ -24,8 +26,8 @@ function makeSvgPreview(title, subtitle, accentColor = '#38bdf8') {
     <rect width="800" height="500" fill="url(#bg)"/>
     <circle cx="400" cy="190" r="140" fill="url(#glow)"/>
     <rect x="24" y="24" width="752" height="452" rx="20" fill="none" stroke="rgba(255,255,255,0.12)" stroke-width="1.5"/>
-    <circle cx="400" cy="195" r="44" fill="${accentColor}" fill-opacity="0.15" stroke="${accentColor}" stroke-width="2"/>
-    <text x="400" y="206" font-family="-apple-system, system-ui, BlinkMacSystemFont, sans-serif" font-size="28" font-weight="700" fill="${accentColor}" text-anchor="middle">✦</text>
+    <circle cx="400" cy="195" r="48" fill="${accentColor}" fill-opacity="0.12" stroke="${accentColor}" stroke-width="2"/>
+    <image href="${SYNMORPHIC_LOGO_B64}" x="372" y="167" width="56" height="56" preserveAspectRatio="xMidYMid meet" />
     <text x="400" y="280" font-family="-apple-system, system-ui, BlinkMacSystemFont, sans-serif" font-size="26" font-weight="700" fill="#f8fafc" text-anchor="middle">${safeTitle}</text>
     <text x="400" y="318" font-family="-apple-system, system-ui, BlinkMacSystemFont, sans-serif" font-size="15" font-weight="500" fill="#94a3b8" text-anchor="middle">${safeSubtitle}</text>
   </svg>`
