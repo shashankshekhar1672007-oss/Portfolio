@@ -1,0 +1,357 @@
+/* ─── GitHub Tracker Container ─── */
+.gh-tracker {
+  width: min(1080px, 100%);
+  padding: 38px;
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+  margin-top: 36px;
+}
+
+/* ─── Header ─── */
+.gh-tracker__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+
+.gh-tracker__title-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.gh-tracker__badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.78rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: #10b981;
+  margin-bottom: 2px;
+}
+
+.gh-tracker__pulse-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #10b981;
+  box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7);
+  animation: pulse-green 2s infinite;
+}
+
+@keyframes pulse-green {
+  0% {
+    transform: scale(0.95);
+    box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7);
+  }
+  70% {
+    transform: scale(1);
+    box-shadow: 0 0 0 8px rgba(16, 185, 129, 0);
+  }
+  100% {
+    transform: scale(0.95);
+    box-shadow: 0 0 0 0 rgba(16, 185, 129, 0);
+  }
+}
+
+.gh-tracker__title {
+  font-size: 1.65rem;
+  font-weight: 700;
+  color: var(--heading-ink);
+  margin: 0;
+}
+
+.gh-tracker__subtitle {
+  font-size: 0.95rem;
+  color: var(--light-ink);
+  margin: 0;
+}
+
+.gh-tracker__profile-link {
+  color: var(--heading-ink);
+  font-weight: 600;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+  transition: opacity 0.2s ease;
+}
+
+.gh-tracker__profile-link:hover {
+  opacity: 0.7;
+}
+
+/* ─── Stats Pill ─── */
+.gh-tracker__stats {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 10px 20px;
+}
+
+.gh-tracker__stat {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.gh-tracker__stat-val {
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: var(--heading-ink);
+  line-height: 1.1;
+}
+
+.gh-tracker__stat-label {
+  font-size: 0.75rem;
+  color: var(--light-ink);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.gh-tracker__stat-divider {
+  width: 1px;
+  height: 24px;
+  background: var(--glass-border);
+}
+
+/* ─── Filters ─── */
+.gh-tracker__filters {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.gh-tracker__filter-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 14px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--ink);
+  border: 1px solid var(--glass-border);
+  background: transparent;
+  cursor: pointer;
+  transition: background 0.18s ease, border-color 0.18s ease, transform 0.15s ease;
+}
+
+.gh-tracker__filter-btn:hover {
+  background: var(--panel-strong);
+  transform: translateY(-1px);
+}
+
+.gh-tracker__filter-btn--active {
+  background: var(--heading-ink);
+  color: #ffffff;
+  border-color: var(--heading-ink);
+}
+
+.gh-tracker__filter-btn--active .gh-tracker__lang-dot {
+  box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.4);
+}
+
+.gh-tracker__lang-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+/* ─── Repositories Grid ─── */
+.gh-tracker__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(310px, 1fr));
+  gap: 18px;
+}
+
+/* ─── Repo Card ─── */
+.gh-card {
+  padding: 22px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 16px;
+  border: 1px solid var(--glass-border);
+  position: relative;
+}
+
+.gh-card:hover {
+  border-color: var(--card-hover-border);
+  box-shadow: 0 12px 30px rgba(67, 86, 132, 0.14);
+}
+
+.gh-card__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+.gh-card__title-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  overflow: hidden;
+}
+
+.gh-card__icon {
+  font-size: 0.95rem;
+  color: var(--light-ink);
+  flex-shrink: 0;
+}
+
+.gh-card__title {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--heading-ink);
+  text-decoration: none;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.gh-card__title:hover {
+  text-decoration: underline;
+}
+
+.gh-card__visibility {
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: var(--light-ink);
+  padding: 2px 8px;
+  text-transform: capitalize;
+  flex-shrink: 0;
+}
+
+.gh-card__desc {
+  font-size: 0.88rem;
+  color: var(--muted-ink);
+  line-height: 1.55;
+  margin: 0;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  min-height: 4.2em;
+}
+
+/* ─── Meta ─── */
+.gh-card__meta {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  flex-wrap: wrap;
+  font-size: 0.8rem;
+  color: var(--light-ink);
+}
+
+.gh-card__meta-item {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.gh-card__meta-date {
+  margin-left: auto;
+  font-size: 0.75rem;
+}
+
+/* ─── Card Actions ─── */
+.gh-card__actions {
+  display: flex;
+  gap: 8px;
+  padding-top: 4px;
+  border-top: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.gh-card__action-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 7px 14px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-decoration: none;
+  color: var(--ink);
+  transition: transform 0.15s ease, background 0.15s ease;
+}
+
+.gh-card__action-btn:hover {
+  transform: translateY(-1px);
+}
+
+.gh-card__action-btn--live {
+  background: var(--heading-ink);
+  color: #ffffff;
+  border-radius: 20px;
+}
+
+.gh-card__action-btn--live:hover {
+  background: #000000;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* ─── Skeletons ─── */
+.gh-card--skeleton {
+  min-height: 180px;
+  position: relative;
+  overflow: hidden;
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.gh-card__shimmer {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0.4) 50%,
+    transparent 100%
+  );
+  animation: shimmer 1.8s infinite;
+}
+
+@keyframes shimmer {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(100%); }
+}
+
+/* ─── Error State ─── */
+.gh-tracker__error {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  padding: 32px;
+  text-align: center;
+}
+
+.gh-tracker__error i {
+  font-size: 2rem;
+  color: var(--light-ink);
+}
+
+.gh-tracker__action-btn {
+  padding: 8px 20px;
+  border-radius: 999px;
+  background: var(--heading-ink);
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+/* ─── Responsive ─── */
+@media screen and (max-width: 600px) {
+  .gh-tracker {
+    padding: 24px 16px;
+  }
+
+  .gh-tracker__grid {
+    grid-template-columns: 1fr;
+  }
+}
