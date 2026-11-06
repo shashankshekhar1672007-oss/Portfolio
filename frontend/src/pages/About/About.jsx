@@ -1,3 +1,4 @@
+import { useState, useEffect } from 'react'
 import './About.css'
 
 const socialLinks = [
@@ -20,10 +21,10 @@ const skills = [
   { label: 'C',          icon: 'fa-solid fa-c'         },
 ]
 
-const cpRatings = [
-  { platform: 'LeetCode',   rating: '1600+', icon: 'fa-solid fa-trophy',           href: 'https://leetcode.com/u/shashank_16707/',            accentVar: '--cp-lc' },
-  { platform: 'Codeforces', rating: '1100+', icon: 'fa-solid fa-chess-knight',      href: 'https://codeforces.com/profile/baby_singh_07',       accentVar: '--cp-cf' },
+const initialCpRatings = [
+  { platform: 'LeetCode',   rating: '1900+', icon: 'fa-solid fa-trophy',           href: 'https://leetcode.com/u/shashank_16707/',            accentVar: '--cp-lc' },
   { platform: 'CodeChef',   rating: '1400+', icon: 'fa-solid fa-fire-flame-curved', href: 'https://www.codechef.com/users/baby_singh_07',        accentVar: '--cp-cc' },
+  { platform: 'Codeforces', rating: '1300+', icon: 'fa-solid fa-chess-knight',      href: 'https://codeforces.com/profile/baby_singh_07',       accentVar: '--cp-cf' },
 ]
 
 const education = [
@@ -88,6 +89,49 @@ const achievements = [
 ]
 
 export default function About() {
+  const [ratings, setRatings] = useState(initialCpRatings)
+
+  useEffect(() => {
+    let isMounted = true
+
+    // Fetch Codeforces live rating & floor to 100
+    fetch('https://codeforces.com/api/user.info?handles=baby_singh_07')
+      .then(res => res.json())
+      .then(data => {
+        if (!isMounted) return
+        if (data.status === 'OK' && data.result?.[0]?.rating) {
+          const cfRating = Math.floor(data.result[0].rating / 100) * 100
+          setRatings(prev => prev.map(item =>
+            item.platform === 'Codeforces'
+              ? { ...item, rating: `${cfRating}+` }
+              : item
+          ))
+        }
+      })
+      .catch(() => {})
+
+    // Fetch LeetCode live rating & floor to 100
+    fetch('https://alfa-leetcode-api.onrender.com/userContestRankingInfo/shashank_16707')
+      .then(res => res.json())
+      .then(data => {
+        if (!isMounted) return
+        const lcRatingRaw = data?.userContestRanking?.rating
+        if (lcRatingRaw) {
+          const lcRating = Math.floor(lcRatingRaw / 100) * 100
+          setRatings(prev => prev.map(item =>
+            item.platform === 'LeetCode'
+              ? { ...item, rating: `${lcRating}+` }
+              : item
+          ))
+        }
+      })
+      .catch(() => {})
+
+    return () => {
+      isMounted = false
+    }
+  }, [])
+
   return (
     <main className="about-page">
       <div className="about-page__info-box">
@@ -223,7 +267,7 @@ export default function About() {
                 <i className="fa-solid fa-ranking-star"></i> Competitive Programming
               </div>
               <div className="about-page__cp-ratings">
-                {cpRatings.map(({ platform, rating, icon, href, accentVar }) => (
+                {ratings.map(({ platform, rating, icon, href, accentVar }) => (
                   <a
                     key={platform}
                     href={href}

@@ -38,7 +38,7 @@
   - Direct live demo and GitHub repository access.
 
 - **🏆 Developer Profile, CP & Education**
-  - Live competitive programming rating cards (**LeetCode 1600+**, **CodeChef 1400+**, **Codeforces 1100+**).
+  - Live competitive programming rating cards (**LeetCode 1900+**, **CodeChef 1400+**, **Codeforces 1300+**).
   - Academic background at **NIT Patna** (B.Tech CSE '29).
   - Downloadable resume button and interactive skill chips.
 
