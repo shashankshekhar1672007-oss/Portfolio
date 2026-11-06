@@ -1,16 +1,53 @@
-# React + Vite
+# 🌐 SynMorphic Portfolio — Frontend
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+The modern, responsive glassmorphism web client for **Shashank Shekhar Singh's** developer portfolio.
 
-Currently, two official plugins are available:
+[![Live on Vercel](https://img.shields.io/badge/Vercel-Live_Demo-000000?style=for-the-badge&logo=vercel&logoColor=white)](https://portfolio-omega-sepia-38.vercel.app/)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- **🚀 Live Production URL:** [https://portfolio-omega-sepia-38.vercel.app/](https://portfolio-omega-sepia-38.vercel.app/)
 
-## React Compiler
+---
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## 🛠️ Tech Stack
 
-## Expanding the ESLint configuration
+- **Framework:** React 19
+- **Build Tool:** Vite 8
+- **Routing:** React Router DOM 7
+- **Motion & Transitions:** Framer Motion 12
+- **Styling:** CSS variables, frosted glassmorphism system (`backdrop-filter: blur`), responsive fluid typography (`clamp()`)
+- **Icons:** FontAwesome 6
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+---
+
+## 💻 Local Development
+
+1. **Install dependencies:**
+   ```bash
+   npm install
+   ```
+
+2. **Start the local dev server:**
+   ```bash
+   npm run dev
+   ```
+   Open `http://localhost:5173/` in your browser.
+
+3. **Production build:**
+   ```bash
+   npm run build
+   ```
+   Output is compiled into `dist/`.
+
+4. **Preview production build locally:**
+   ```bash
+   npm run preview
+   ```
+
+---
+
+## 🚀 Deployment (Vercel)
+
+- **Root Directory:** `frontend`
+- **Build Command:** `npm run build`
+- **Output Directory:** `dist`
+- **SPA Rewrites:** Configured in `vercel.json` for client-side routing.

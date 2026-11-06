@@ -2,6 +2,7 @@
 
 <div align="center">
 
+[![Live Demo](https://img.shields.io/badge/Vercel-Live_Demo-000000?style=for-the-badge&logo=vercel&logoColor=white)](https://portfolio-omega-sepia-38.vercel.app/)
 ![React](https://img.shields.io/badge/React-19.x-61DAFB?style=for-the-badge&logo=react&logoColor=black)
 ![Vite](https://img.shields.io/badge/Vite-8.x-646CFF?style=for-the-badge&logo=vite&logoColor=white)
 ![Express](https://img.shields.io/badge/Express-5.x-000000?style=for-the-badge&logo=express&logoColor=white)
@@ -14,7 +15,7 @@
   Featuring smooth page transitions, deep-dive project case studies, competitive programming profiles, and an extensible Express/MongoDB backend with ImageKit CDN integration.
 </p>
 
-[**View Live Demo**](https://shashankshekhar1672007-oss.github.io/Portfolio/) · [**Report Issue**](https://github.com/shashankshekhar1672007-oss/Portfolio/issues)
+[**🚀 View Live Site (Vercel)**](https://portfolio-omega-sepia-38.vercel.app/) · [**Report Issue**](https://github.com/shashankshekhar1672007-oss/Portfolio/issues)
 
 </div>
 
@@ -161,6 +162,17 @@ Start the backend server:
 node server.js
 ```
 The API server will connect to MongoDB and start on **`http://localhost:4000/`**.
+
+---
+
+## 🌐 Live Deployment
+
+The client-side single page application (SPA) is continuously deployed on **Vercel**:
+
+- **Production URL:** [https://portfolio-omega-sepia-38.vercel.app/](https://portfolio-omega-sepia-38.vercel.app/)
+- **Vercel Root Directory:** `frontend`
+- **Application Preset:** `Vite`
+- **Routing:** Handled seamlessly via `vercel.json` rewrites (`/(.*) -> /index.html`) ensuring clean deep-linking across `/projects`, `/about`, `/contact`, and `/projects/:id`.
 
 ---
 
