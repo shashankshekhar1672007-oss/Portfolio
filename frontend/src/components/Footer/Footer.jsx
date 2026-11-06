@@ -10,7 +10,7 @@ const navLinks = [
 
 const socialLinks = [
   { label: 'GitHub',   handle: 'shashankshekhar1672007-oss', href: 'https://github.com/shashankshekhar1672007-oss',                icon: 'fa-brands fa-github'   },
-  { label: 'LinkedIn', handle: 'Shashank Shekhar Singh',     href: 'https://www.linkedin.com/in/shashank-shekhar-singh-405959377/', icon: 'fa-brands fa-linkedin' },
+  { label: 'LinkedIn', handle: 'Shashank Shekhar Singh',     href: 'https://www.linkedin.com/in/shashank-shekhar-singh-nitp/',      icon: 'fa-brands fa-linkedin' },
   { label: 'LeetCode', handle: 'shashank_16707',             href: 'https://leetcode.com/u/shashank_16707/',                      icon: 'fa-solid fa-code'      },
   { label: 'Email',    handle: 'shashank.shekhar.1672007@gmail.com', href: 'mailto:shashank.shekhar.1672007@gmail.com',                    icon: 'fa-solid fa-envelope'  },
 ]

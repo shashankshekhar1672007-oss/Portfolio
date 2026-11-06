@@ -189,7 +189,7 @@ The client-side single page application (SPA) is continuously deployed on **Verc
 
 **Shashank Shekhar Singh**
 - 🎓 B.Tech CSE (2025–2029) — National Institute of Technology Patna
-- 💼 [LinkedIn](https://www.linkedin.com/in/shashank-shekhar-singh-405959377/)
+- 💼 [LinkedIn](https://www.linkedin.com/in/shashank-shekhar-singh-nitp/)
 - 🐙 [GitHub](https://github.com/shashankshekhar1672007-oss)
 - 🧠 [LeetCode](https://leetcode.com/u/shashank_16707/)
 - ✉️ [shashank.shekhar.1672007@gmail.com](mailto:shashank.shekhar.1672007@gmail.com)

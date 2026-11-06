@@ -5,7 +5,7 @@ const socialLinks = [
   {
     name: 'LinkedIn',
     handle: 'Shashank Shekhar Singh',
-    href: 'https://www.linkedin.com/in/shashank-shekhar-singh-405959377/',
+    href: 'https://www.linkedin.com/in/shashank-shekhar-singh-nitp/',
     icon: 'fa-brands fa-linkedin',
     color: '#0a66c2',
   },
