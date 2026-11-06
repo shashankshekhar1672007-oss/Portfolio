@@ -3,22 +3,26 @@ import './Contact.css'
 
 const contactLinks = [
   {
+    title: 'Email',
     label: 'shashank.shekhar.1672007@gmail.com',
     href: 'mailto:shashank.shekhar.1672007@gmail.com',
     icon: 'fa-solid fa-envelope',
   },
   {
-    label: 'LinkedIn — Shashank Shekhar Singh',
+    title: 'LinkedIn',
+    label: 'Shashank Shekhar Singh',
     href: 'https://www.linkedin.com/in/shashank-shekhar-singh-405959377/',
     icon: 'fa-brands fa-linkedin',
   },
   {
-    label: 'GitHub — shashankshekhar1672007-oss',
+    title: 'GitHub',
+    label: 'shashankshekhar1672007-oss',
     href: 'https://github.com/shashankshekhar1672007-oss',
     icon: 'fa-brands fa-github',
   },
   {
-    label: 'LeetCode — shashank_shekhar_16072007',
+    title: 'LeetCode',
+    label: 'shashank_shekhar_16072007',
     href: 'https://leetcode.com/u/shashank_shekhar_16072007/',
     icon: 'fa-solid fa-code',
   },
@@ -127,9 +131,9 @@ export default function Contact() {
               <div className="contact-page__divider" />
 
               <div className="contact-page__links">
-                {contactLinks.map(({ label, href, icon }) => (
+                {contactLinks.map(({ title, label, href, icon }) => (
                   <a
-                    key={label}
+                    key={title}
                     className="contact-page__link"
                     href={href}
                     target={href.startsWith('mailto:') ? undefined : '_blank'}
@@ -138,7 +142,10 @@ export default function Contact() {
                     <span className="contact-page__icon panel panel--soft">
                       <i className={icon}></i>
                     </span>
-                    <span className="contact-page__link-label">{label}</span>
+                    <div className="contact-page__link-text">
+                      <span className="contact-page__link-title">{title}</span>
+                      <span className="contact-page__link-val">{label}</span>
+                    </div>
                     <i className="fa-solid fa-arrow-right contact-page__link-arrow"></i>
                   </a>
                 ))}
@@ -159,7 +166,7 @@ export default function Contact() {
                       id="firstName" name="firstName" type="text" required
                       placeholder="Shashank"
                       value={form.firstName} onChange={handleChange}
-                      className="contact-page__input panel panel--soft"
+                      className="contact-page__input"
                     />
                   </div>
                   <div className="contact-page__field">
@@ -170,7 +177,7 @@ export default function Contact() {
                       id="lastName" name="lastName" type="text"
                       placeholder="Singh"
                       value={form.lastName} onChange={handleChange}
-                      className="contact-page__input panel panel--soft"
+                      className="contact-page__input"
                     />
                   </div>
                 </div>
@@ -185,7 +192,7 @@ export default function Contact() {
                       id="email" name="email" type="email" required
                       placeholder="you@example.com"
                       value={form.email} onChange={handleChange}
-                      className="contact-page__input panel panel--soft"
+                      className="contact-page__input"
                     />
                   </div>
                   <div className="contact-page__field">
@@ -196,7 +203,7 @@ export default function Contact() {
                       id="phone" name="phone" type="tel"
                       placeholder="+91 XXXXX XXXXX"
                       value={form.phone} onChange={handleChange}
-                      className="contact-page__input panel panel--soft"
+                      className="contact-page__input"
                     />
                   </div>
                 </div>
@@ -211,7 +218,7 @@ export default function Contact() {
                       id="college" name="college" type="text"
                       placeholder="NIT Patna"
                       value={form.college} onChange={handleChange}
-                      className="contact-page__input panel panel--soft"
+                      className="contact-page__input"
                     />
                   </div>
                   <div className="contact-page__field">
@@ -222,7 +229,7 @@ export default function Contact() {
                       <select
                         id="topic" name="topic"
                         value={form.topic} onChange={handleChange}
-                        className="contact-page__select panel panel--soft"
+                        className="contact-page__select"
                       >
                         <option value="">— Select a topic —</option>
                         {topics.map(t => <option key={t} value={t}>{t}</option>)}
@@ -242,7 +249,7 @@ export default function Contact() {
                       <select
                         id="budget" name="budget"
                         value={form.budget} onChange={handleChange}
-                        className="contact-page__select panel panel--soft"
+                        className="contact-page__select"
                       >
                         <option value="">— Budget range —</option>
                         <option>Unpaid / Open Source</option>
@@ -262,7 +269,7 @@ export default function Contact() {
                       <select
                         id="timeline" name="timeline"
                         value={form.timeline} onChange={handleChange}
-                        className="contact-page__select panel panel--soft"
+                        className="contact-page__select"
                       >
                         <option value="">— How urgent? —</option>
                         <option>ASAP</option>
@@ -284,7 +291,7 @@ export default function Contact() {
                     id="message" name="message" required rows={4}
                     placeholder="Tell me about your project, idea, or question..."
                     value={form.message} onChange={handleChange}
-                    className="contact-page__textarea panel panel--soft"
+                    className="contact-page__textarea"
                   />
                 </div>
 
