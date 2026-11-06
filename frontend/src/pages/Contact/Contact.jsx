@@ -28,51 +28,34 @@ const contactLinks = [
   },
 ]
 
-const topics = [
-  'Frontend Development',
-  'Full-Stack Web App',
-  'ML / Data Science Project',
-  'Competitive Programming',
-  'Open Source Collaboration',
-  'Internship / Opportunity',
-  'Other',
-]
-
 const INITIAL = {
   firstName: '',
   lastName: '',
   email: '',
   phone: '',
   college: '',
-  topic: '',
-  budget: '',
-  timeline: '',
   message: '',
-  newsletter: false,
 }
 
 export default function Contact() {
   const [form, setForm] = useState(INITIAL)
 
   function handleChange(e) {
-    const { name, value, type, checked } = e.target
-    setForm(f => ({ ...f, [name]: type === 'checkbox' ? checked : value }))
+    const { name, value } = e.target
+    setForm(f => ({ ...f, [name]: value }))
   }
 
-  // No backend — opens default mail client with prefilled body
+  // Opens default mail client with prefilled body
   function handleSubmit(e) {
     e.preventDefault()
-    const subject = encodeURIComponent(`[Portfolio] ${form.topic || 'Message'} from ${form.firstName} ${form.lastName}`)
+    const sender = `${form.firstName} ${form.lastName}`.trim() || 'Someone'
+    const subject = encodeURIComponent(`[Portfolio] Message from ${sender}`)
     const body = encodeURIComponent(
       `Name: ${form.firstName} ${form.lastName}\n` +
       `Email: ${form.email}\n` +
-      (form.phone    ? `Phone: ${form.phone}\n`          : '') +
-      (form.college  ? `College/Company: ${form.college}\n` : '') +
-      (form.topic    ? `Topic: ${form.topic}\n`          : '') +
-      (form.budget   ? `Budget: ${form.budget}\n`        : '') +
-      (form.timeline ? `Timeline: ${form.timeline}\n`    : '') +
-      `\nMessage:\n${form.message}\n` +
-      `\nNewsletter: ${form.newsletter ? 'Yes' : 'No'}`
+      (form.phone   ? `Phone: ${form.phone}\n`             : '') +
+      (form.college ? `College/Organization: ${form.college}\n` : '') +
+      `\nMessage:\n${form.message}\n`
     )
     window.location.href = `mailto:shashank.shekhar.1672007@gmail.com?subject=${subject}&body=${body}`
   }
@@ -103,20 +86,6 @@ export default function Contact() {
                   <div>
                     <span className="contact-page__meta-label">Based in</span>
                     <span className="contact-page__meta-value">Patna, Bihar · India</span>
-                  </div>
-                </div>
-                <div className="contact-page__meta-item">
-                  <i className="fa-solid fa-clock"></i>
-                  <div>
-                    <span className="contact-page__meta-label">Response time</span>
-                    <span className="contact-page__meta-value">Within 24 hours</span>
-                  </div>
-                </div>
-                <div className="contact-page__meta-item">
-                  <i className="fa-solid fa-briefcase"></i>
-                  <div>
-                    <span className="contact-page__meta-label">Open to</span>
-                    <span className="contact-page__meta-value">Internships &amp; Collabs</span>
                   </div>
                 </div>
                 <div className="contact-page__meta-item">
@@ -164,7 +133,7 @@ export default function Contact() {
                     </label>
                     <input
                       id="firstName" name="firstName" type="text" required
-                      placeholder="Shashank"
+                      placeholder="Your first name"
                       value={form.firstName} onChange={handleChange}
                       className="contact-page__input"
                     />
@@ -175,7 +144,7 @@ export default function Contact() {
                     </label>
                     <input
                       id="lastName" name="lastName" type="text"
-                      placeholder="Singh"
+                      placeholder="Your last name"
                       value={form.lastName} onChange={handleChange}
                       className="contact-page__input"
                     />
@@ -208,78 +177,17 @@ export default function Contact() {
                   </div>
                 </div>
 
-                {/* Row 3 — College/Company + Topic */}
-                <div className="contact-page__field-row">
-                  <div className="contact-page__field">
-                    <label className="contact-page__label" htmlFor="college">
-                      College / Company
-                    </label>
-                    <input
-                      id="college" name="college" type="text"
-                      placeholder="NIT Patna"
-                      value={form.college} onChange={handleChange}
-                      className="contact-page__input"
-                    />
-                  </div>
-                  <div className="contact-page__field">
-                    <label className="contact-page__label" htmlFor="topic">
-                      Topic
-                    </label>
-                    <div className="contact-page__select-wrap">
-                      <select
-                        id="topic" name="topic"
-                        value={form.topic} onChange={handleChange}
-                        className="contact-page__select"
-                      >
-                        <option value="">— Select a topic —</option>
-                        {topics.map(t => <option key={t} value={t}>{t}</option>)}
-                      </select>
-                      <i className="fa-solid fa-chevron-down contact-page__select-icon"></i>
-                    </div>
-                  </div>
-                </div>
-
-                {/* Row 4 — Budget + Timeline */}
-                <div className="contact-page__field-row">
-                  <div className="contact-page__field">
-                    <label className="contact-page__label" htmlFor="budget">
-                      Budget <span className="contact-page__optional">(if applicable)</span>
-                    </label>
-                    <div className="contact-page__select-wrap">
-                      <select
-                        id="budget" name="budget"
-                        value={form.budget} onChange={handleChange}
-                        className="contact-page__select"
-                      >
-                        <option value="">— Budget range —</option>
-                        <option>Unpaid / Open Source</option>
-                        <option>Under ₹5,000</option>
-                        <option>₹5,000 – ₹15,000</option>
-                        <option>₹15,000 – ₹50,000</option>
-                        <option>₹50,000+</option>
-                      </select>
-                      <i className="fa-solid fa-chevron-down contact-page__select-icon"></i>
-                    </div>
-                  </div>
-                  <div className="contact-page__field">
-                    <label className="contact-page__label" htmlFor="timeline">
-                      Timeline
-                    </label>
-                    <div className="contact-page__select-wrap">
-                      <select
-                        id="timeline" name="timeline"
-                        value={form.timeline} onChange={handleChange}
-                        className="contact-page__select"
-                      >
-                        <option value="">— How urgent? —</option>
-                        <option>ASAP</option>
-                        <option>Within 1 week</option>
-                        <option>Within 1 month</option>
-                        <option>Flexible</option>
-                      </select>
-                      <i className="fa-solid fa-chevron-down contact-page__select-icon"></i>
-                    </div>
-                  </div>
+                {/* Row 3 — College / Organization */}
+                <div className="contact-page__field">
+                  <label className="contact-page__label" htmlFor="college">
+                    College / Organization <span className="contact-page__optional">(optional)</span>
+                  </label>
+                  <input
+                    id="college" name="college" type="text"
+                    placeholder="Your university, organization, or company"
+                    value={form.college} onChange={handleChange}
+                    className="contact-page__input"
+                  />
                 </div>
 
                 {/* Message */}
@@ -288,24 +196,12 @@ export default function Contact() {
                     Message <span className="contact-page__required">*</span>
                   </label>
                   <textarea
-                    id="message" name="message" required rows={4}
-                    placeholder="Tell me about your project, idea, or question..."
+                    id="message" name="message" required rows={5}
+                    placeholder="Write your message here..."
                     value={form.message} onChange={handleChange}
                     className="contact-page__textarea"
                   />
                 </div>
-
-                {/* Newsletter */}
-                <label className="contact-page__checkbox-row">
-                  <input
-                    type="checkbox" name="newsletter"
-                    checked={form.newsletter} onChange={handleChange}
-                    className="contact-page__checkbox"
-                  />
-                  <span className="contact-page__checkbox-label">
-                    Notify me about open-source projects and updates
-                  </span>
-                </label>
 
                 {/* Submit */}
                 <button
