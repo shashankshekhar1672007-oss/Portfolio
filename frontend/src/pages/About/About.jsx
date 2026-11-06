@@ -3,7 +3,7 @@ import './About.css'
 const socialLinks = [
   { label: 'GitHub',   href: 'https://github.com/shashankshekhar1672007-oss',                       icon: 'fa-brands fa-github'   },
   { label: 'LinkedIn', href: 'https://www.linkedin.com/in/shashank-shekhar-singh-405959377/',        icon: 'fa-brands fa-linkedin' },
-  { label: 'LeetCode', href: 'https://leetcode.com/u/shashank_shekhar_16072007/',                    icon: 'fa-solid fa-code'      },
+  { label: 'LeetCode', href: 'https://leetcode.com/u/shashank_16707/',                               icon: 'fa-solid fa-code'      },
   { label: 'Email',    href: 'mailto:shashank.shekhar.1672007@gmail.com',                            icon: 'fa-solid fa-envelope'  },
 ]
 
@@ -21,7 +21,7 @@ const skills = [
 ]
 
 const cpRatings = [
-  { platform: 'LeetCode',   rating: '1600+', icon: 'fa-solid fa-trophy',           href: 'https://leetcode.com/u/shashank_shekhar_16072007/', accentVar: '--cp-lc' },
+  { platform: 'LeetCode',   rating: '1600+', icon: 'fa-solid fa-trophy',           href: 'https://leetcode.com/u/shashank_16707/',            accentVar: '--cp-lc' },
   { platform: 'Codeforces', rating: '1100+', icon: 'fa-solid fa-chess-knight',      href: 'https://codeforces.com/profile/baby_singh_07',       accentVar: '--cp-cf' },
   { platform: 'CodeChef',   rating: '1400+', icon: 'fa-solid fa-fire-flame-curved', href: 'https://www.codechef.com/users/baby_singh_07',        accentVar: '--cp-cc' },
 ]

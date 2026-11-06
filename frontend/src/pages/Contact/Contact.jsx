@@ -22,8 +22,8 @@ const contactLinks = [
   },
   {
     title: 'LeetCode',
-    label: 'shashank_shekhar_16072007',
-    href: 'https://leetcode.com/u/shashank_shekhar_16072007/',
+    label: 'shashank_16707',
+    href: 'https://leetcode.com/u/shashank_16707/',
     icon: 'fa-solid fa-code',
   },
 ]
