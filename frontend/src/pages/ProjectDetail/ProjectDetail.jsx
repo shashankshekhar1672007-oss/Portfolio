@@ -50,26 +50,26 @@ export default function ProjectDetail() {
           </div>
 
           <div className="project-detail__actions">
-            {project.link && (
-              <a
-                href={project.link}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="btn-primary project-detail__action-btn"
-              >
-                <i className="fa-solid fa-arrow-up-right-from-square"></i>
-                View Live
-              </a>
-            )}
             {project.github && (
               <a
                 href={project.github}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="btn-secondary project-detail__action-btn"
+                className="btn-primary project-detail__action-btn"
               >
                 <i className="fa-brands fa-github"></i>
                 View Code
+              </a>
+            )}
+            {project.link && (
+              <a
+                href={project.link}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn-secondary project-detail__action-btn"
+              >
+                <i className="fa-solid fa-arrow-up-right-from-square"></i>
+                View Live
               </a>
             )}
           </div>
