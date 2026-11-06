@@ -314,10 +314,45 @@
 /* ─── Responsive ─── */
 @media screen and (max-width: 600px) {
   .gh-tracker {
-    padding: 24px 16px;
+    padding: 22px 14px;
+    margin-top: 24px;
+    gap: 20px;
+  }
+
+  .gh-tracker__header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 14px;
+  }
+
+  .gh-tracker__title {
+    font-size: 1.4rem;
+  }
+
+  .gh-tracker__subtitle {
+    font-size: 0.88rem;
+  }
+
+  .gh-tracker__stats {
+    padding: 8px 16px;
+    gap: 14px;
+  }
+
+  .gh-tracker__stat-val {
+    font-size: 1.15rem;
   }
 
   .gh-tracker__grid {
     grid-template-columns: 1fr;
+    gap: 14px;
+  }
+
+  .gh-card {
+    padding: 18px 16px;
+    gap: 14px;
+  }
+
+  .gh-card__title {
+    font-size: 1rem;
   }
 }

@@ -123,3 +123,34 @@
   transform: translateX(-50%) translateY(50%);
   opacity: 1;
 }
+
+/* ─── Touchscreens & Mobile (Actions Always Visible) ─── */
+@media (hover: none), (max-width: 768px) {
+  .project-card {
+    padding-bottom: 1.4rem;
+  }
+
+  .project-card__details {
+    padding: 0 1.25rem;
+  }
+
+  .project-card__actions {
+    position: static;
+    transform: none;
+    opacity: 1;
+    margin-top: 1.1rem;
+    padding: 0 1.25rem;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  .project-card:hover .project-card__actions {
+    transform: none;
+  }
+
+  .project-card__btn {
+    padding: 9px 18px;
+    font-size: 0.82rem;
+  }
+}

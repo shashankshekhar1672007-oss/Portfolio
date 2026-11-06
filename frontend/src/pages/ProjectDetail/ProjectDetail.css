@@ -313,22 +313,32 @@
 /* ─── Responsive ─── */
 @media (max-width: 768px) {
   .project-detail {
-    padding: 96px 16px 40px;
+    padding: 86px 12px 36px;
     gap: 16px;
   }
 
   .project-detail__outer-panel {
-    padding: 8px;
+    padding: 0;
+    background: transparent;
+    border: none;
+    box-shadow: none;
   }
 
   .project-detail__header-panel,
   .project-detail__screenshots-panel,
   .project-detail__section {
-    padding: 20px;
+    padding: 22px 14px;
+    border-radius: 16px;
+  }
+
+  .project-detail__title {
+    font-size: clamp(1.6rem, 6vw, 2.4rem);
+    word-break: break-word;
   }
 
   .project-detail__grid {
     grid-template-columns: 1fr;
+    gap: 16px;
   }
 
   .project-detail__section--tech,
@@ -338,16 +348,28 @@
 
   .project-detail__actions {
     flex-direction: column;
+    gap: 10px;
   }
 
   .project-detail__action-btn {
     width: 100%;
     justify-content: center;
   }
-}
 
-@media (max-width: 600px) {
-  .project-detail {
-    padding: 96px 12px 36px;
+  .project-detail__thumbnail-list {
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    padding: 4px 2px;
+  }
+
+  .project-detail__thumbnail {
+    width: 76px;
+    height: 52px;
+  }
+
+  .project-detail__nav-link {
+    width: 100%;
+    justify-content: center;
+    text-align: center;
   }
 }

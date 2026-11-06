@@ -131,16 +131,20 @@
 
 /* ─── Responsive ─── */
 @media screen and (max-width: 768px) {
+  .footer {
+    margin-top: 48px;
+  }
+
   .footer__container {
-    padding: 40px 18px;
+    padding: 36px 16px 28px;
   }
 
   .footer__content {
     grid-template-columns: 1fr;
-    gap: 32px;
+    gap: 26px;
   }
 
   .footer__divider {
-    margin: 28px 0;
+    margin: 22px 0;
   }
 }
