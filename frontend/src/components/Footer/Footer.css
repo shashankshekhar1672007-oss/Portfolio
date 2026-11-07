@@ -44,23 +44,30 @@
   align-items: center;
   gap: 10px;
   height: 40px;
-  font-size: 1.45rem;
+  font-size: 1.35rem;
   font-weight: 700;
   font-family: var(--font-display);
   text-decoration: none;
-  color: var(--heading-ink);
+  color: var(--ink);
   width: fit-content;
-  letter-spacing: -0.02em;
+  letter-spacing: -0.01em;
+  white-space: nowrap;
 }
 
 .footer__logo-icon {
-  width: 26px;
-  height: 26px;
+  width: 28px;
+  height: 28px;
   object-fit: contain;
+  flex-shrink: 0;
 }
 
-.footer__logo-main   { color: var(--heading-ink); font-weight: 700; }
-.footer__logo-suffix { color: var(--light-ink); font-weight: 600; }
+.footer__logo-text {
+  display: inline-flex;
+  align-items: center;
+}
+
+.footer__logo-main   { color: var(--heading-ink); }
+.footer__logo-suffix { color: var(--light-ink);   }
 
 .footer__tagline {
   font-size: 0.9rem;

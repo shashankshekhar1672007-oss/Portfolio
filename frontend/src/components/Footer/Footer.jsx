@@ -31,9 +31,11 @@ export default function Footer() {
           {/* Branding & Status */}
           <div className="footer__section footer__branding">
             <NavLink className="footer__logo" to="/" onClick={scrollToTop}>
-              <img src="/BlackLogo.png" alt="SynMorphic Logo" className="footer__logo-icon" />
-              <span className="footer__logo-main">Syn</span>
-              <span className="footer__logo-suffix">Morphic</span>
+              <img src="/SynMorphicLogo2.png" alt="SynMorphic Logo" className="footer__logo-icon" />
+              <span className="footer__logo-text">
+                <span className="footer__logo-main">Syn</span>
+                <span className="footer__logo-suffix">Morphic</span>
+              </span>
             </NavLink>
             <p className="footer__tagline">
               Crafting fluid glassmorphic web applications &amp; solving algorithmic challenges.
