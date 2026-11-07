@@ -6,7 +6,14 @@ import './ProjectDetail.css'
 export default function ProjectDetail() {
   const { id } = useParams()
   const navigate = useNavigate()
-  const project = projects.find(p => p.id === parseInt(id))
+  const normalizedId = id ? id.toLowerCase() : ''
+  const project = projects.find(
+    (p) =>
+      p.id === parseInt(id, 10) ||
+      (p.slug && p.slug.toLowerCase() === normalizedId) ||
+      (p.altSlugs && p.altSlugs.includes(normalizedId)) ||
+      p.title.toLowerCase().replace(/[^a-z0-9]+/g, '-') === normalizedId
+  )
   const [selectedScreenshot, setSelectedScreenshot] = useState(0)
 
   if (!project) {

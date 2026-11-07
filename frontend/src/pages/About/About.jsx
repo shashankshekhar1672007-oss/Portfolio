@@ -106,11 +106,11 @@ const featuredProjects = [
     link: '/projects/tic-tac-toe',
   },
   {
-    name: 'Theme Park System',
-    desc: 'Python & MySQL CRUD application managing ticket sales and visitor entries.',
-    tags: ['Python', 'MySQL'],
-    icon: 'fa-solid fa-ticket',
-    link: '/projects/theme-park-system',
+    name: 'Rock Paper Scissors',
+    desc: 'Interactive web game with dynamic score tracking, logic states, and responsive controls.',
+    tags: ['JavaScript', 'HTML5', 'CSS3'],
+    icon: 'fa-solid fa-hand-back-fist',
+    link: '/projects/rock-paper-scissors',
   },
 ]
 

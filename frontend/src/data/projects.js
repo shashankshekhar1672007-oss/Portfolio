@@ -41,6 +41,7 @@ function makeSvgPreview(title, subtitle, accentColor = '#38bdf8') {
 const rawProjects = [
   {
     id: 1,
+    slug: "graph-visualizer-cpp",
     title: "Graph Visualizer C++",
     date: "2026-11-05",
     dateFormatted: "Nov 2026",
@@ -85,6 +86,7 @@ const rawProjects = [
   },
   {
     id: 2,
+    slug: "cubicnotes",
     title: "CubicNotes",
     date: "2026-07-14",
     dateFormatted: "Jul 2026",
@@ -130,6 +132,7 @@ const rawProjects = [
   },
   {
     id: 3,
+    slug: "medilink",
     title: "MediLink",
     date: "2026-05-22",
     dateFormatted: "May 2026",
@@ -159,7 +162,7 @@ const rawProjects = [
         id: 3,
         title: "Consultation Portal",
         description: "Secure medical consultation interface with real-time prescription view",
-        url: makeSvgPreview("Consultation Portal", "Real-time communication and digital prescriptions", "#10b981"),
+        url: makeSvgPreview("Consultation Portal", "Real-time communication and digital prescriptions", "#64748b"),
       },
     ],
     features: [
@@ -183,6 +186,8 @@ const rawProjects = [
   },
   {
     id: 4,
+    slug: "amazon-clone",
+    altSlugs: ["ecommercehomepageclone", "ecommerce-homepage-clone"],
     title: "Amazon Clone",
     date: "2026-01-24",
     dateFormatted: "Jan 2026",
@@ -190,8 +195,8 @@ const rawProjects = [
     shortDescription: "A pixel-perfect recreation of Amazon's homepage built with pure HTML5 and CSS3 to master layout and design principles.",
     description: "I built this Amazon homepage clone as a capstone project to test my understanding of HTML5 and CSS3. My goal was to replicate a complex, real-world layout without relying on frameworks. This project helped me understand the importance of box model, positioning, and structuring a content-heavy webpage.",
     fullDescription: "This was my first major frontend project where I challenged myself to recreate Amazon's homepage without using any frameworks. The focus was on understanding fundamental web technologies and how professional websites structure their layouts. I spent significant time studying the HTML hierarchy, CSS styling techniques, and responsive design patterns used by real-world applications. The project taught me not just how to build, but how to think about scalable, maintainable front-end architecture.",
-    link: "https://shashankshekhar1672007-oss.github.io/AmazonHomePageClone/",
-    github: "https://github.com/shashankshekhar1672007-oss/AmazonHomePageClone",
+    link: "https://shashankshekhar1672007-oss.github.io/EcommerceHomepageClone/",
+    github: "https://github.com/shashankshekhar1672007-oss/EcommerceHomepageClone",
     technologies: ["HTML5", "CSS3", "JavaScript ES6", "Flexbox", "CSS Grid", "Responsive Design", "Semantic HTML"],
     duration: "3 weeks",
     role: "Solo Developer",
@@ -218,7 +223,7 @@ const rawProjects = [
         id: 4,
         title: "Responsive Mobile View",
         description: "Mobile-optimized layout showing hamburger menu and condensed sections",
-        url: makeSvgPreview("Mobile Viewport", "Adapted flexbox/grid layout optimized for mobile screens", "#10b981"),
+        url: makeSvgPreview("Mobile Viewport", "Adapted flexbox/grid layout optimized for mobile screens", "#64748b"),
       },
     ],
     features: [
@@ -251,6 +256,7 @@ const rawProjects = [
   },
   {
     id: 5,
+    slug: "tic-tac-toe",
     title: "Tic Tac Toe",
     date: "2026-01-23",
     dateFormatted: "Jan 2026",
@@ -274,7 +280,7 @@ const rawProjects = [
         id: 2,
         title: "Win Detection",
         description: "Board showing winning combination highlighted with visual feedback",
-        url: makeSvgPreview("Win State Algorithm", "Line highlight algorithm evaluating 8 possible win combinations", "#10b981"),
+        url: makeSvgPreview("Win State Algorithm", "Line highlight algorithm evaluating 8 possible win combinations", "#64748b"),
       },
       {
         id: 3,
@@ -317,6 +323,8 @@ const rawProjects = [
   },
   {
     id: 6,
+    slug: "rock-paper-scissors",
+    altSlugs: ["theme-park-system"],
     title: "Rock Paper Scissors",
     date: "2026-01-20",
     dateFormatted: "Jan 2026",
