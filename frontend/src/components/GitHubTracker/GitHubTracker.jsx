@@ -3,8 +3,13 @@ import { motion } from 'framer-motion'
 import './GitHubTracker.css'
 
 const GITHUB_USERNAME = 'shashankshekhar1672007-oss'
-const CACHE_KEY = `gh_repos_${GITHUB_USERNAME}`
+const CACHE_KEY = `gh_repos_v2_${GITHUB_USERNAME}`
 const CACHE_EXPIRY_MS = 10 * 60 * 1000 // 10 minutes
+
+const EXCLUDED_REPOS = new Set([
+  'amazonhomepageclone',
+  'amazonhomepage',
+])
 
 const LANGUAGE_COLORS = {
   JavaScript: '#f1e05a',
@@ -31,7 +36,14 @@ export default function GitHubTracker() {
         if (cached) {
           const { data, timestamp } = JSON.parse(cached)
           if (Date.now() - timestamp < CACHE_EXPIRY_MS && Array.isArray(data)) {
-            setRepos(data)
+            const clean = data.filter(
+              (repo) =>
+                !repo.fork &&
+                !repo.disabled &&
+                !EXCLUDED_REPOS.has(repo.name.toLowerCase()) &&
+                !repo.name.toLowerCase().includes('amazon')
+            )
+            setRepos(clean)
             setLoading(false)
             return
           }
@@ -53,9 +65,15 @@ export default function GitHubTracker() {
 
         const data = await response.json()
 
-        // Filter and sort by latest push
+        // Filter out forks, disabled/blocked repos, and excluded names
         const sorted = data
-          .filter((repo) => !repo.fork) // Focus on original projects
+          .filter(
+            (repo) =>
+              !repo.fork &&
+              !repo.disabled &&
+              !EXCLUDED_REPOS.has(repo.name.toLowerCase()) &&
+              !repo.name.toLowerCase().includes('amazon')
+          )
           .sort((a, b) => new Date(b.pushed_at) - new Date(a.pushed_at))
 
         setRepos(sorted)
