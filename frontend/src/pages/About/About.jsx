@@ -92,11 +92,11 @@ const featuredProjects = [
     link: '/projects/medilink',
   },
   {
-    name: 'Amazon Clone',
-    desc: 'Full homepage replica focusing on complex layout, box model, and positioning.',
+    name: 'Ecommerce Homepage Clone',
+    desc: 'Full e-commerce homepage replica focusing on complex layout, box model, and positioning.',
     tags: ['HTML5', 'CSS3', 'JavaScript'],
-    icon: 'fa-brands fa-amazon',
-    link: '/projects/amazon-clone',
+    icon: 'fa-solid fa-cart-shopping',
+    link: '/projects/ecommerce-homepage-clone',
   },
   {
     name: 'Tic-Tac-Toe',
