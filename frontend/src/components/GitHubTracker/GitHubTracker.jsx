@@ -100,7 +100,7 @@ export default function GitHubTracker() {
       <div className="gh-tracker__header">
         <div className="gh-tracker__title-group">
           <div className="gh-tracker__badge">
-            <span className="gh-tracker__pulse-dot" />
+            <i className="fa-brands fa-github"></i>
             <span>GitHub Auto-Sync</span>
           </div>
           <h2 className="gh-tracker__title">Live Repository Track Record</h2>

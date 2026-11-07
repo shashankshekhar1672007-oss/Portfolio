@@ -178,12 +178,9 @@
   color: var(--heading-ink);
 }
 
-.about-hero__status-dot {
-  width: 7px;
-  height: 7px;
-  border-radius: 50%;
-  background: #10b981;
-  box-shadow: 0 0 8px #10b981;
+.about-hero__avatar-tag i {
+  font-size: 0.85rem;
+  color: var(--heading-ink);
 }
 
 /* ═══════════════════════════════════════════════════════════
@@ -454,9 +451,9 @@
 .about-timeline__current-tag {
   font-size: 0.7rem;
   font-weight: 700;
-  color: #10b981;
-  background: rgba(16, 185, 129, 0.12);
-  border: 1px solid rgba(16, 185, 129, 0.25);
+  color: var(--heading-ink);
+  background: rgba(0, 0, 0, 0.04);
+  border: 1px solid var(--glass-border);
 }
 
 /* ─── Achievements Block ─── */

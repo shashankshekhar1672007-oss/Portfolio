@@ -40,10 +40,6 @@ export default function Footer() {
             <p className="footer__tagline">
               Crafting fluid glassmorphic web applications &amp; solving algorithmic challenges.
             </p>
-            <div className="footer__status-badge">
-              <span className="footer__status-dot"></span>
-              <span>Available for discussions &amp; open source</span>
-            </div>
           </div>
 
           {/* Quick Navigation */}

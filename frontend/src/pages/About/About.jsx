@@ -241,7 +241,7 @@ export default function About() {
                 />
               </div>
               <div className="about-hero__avatar-tag">
-                <span className="about-hero__status-dot"></span>
+                <i className="fa-solid fa-graduation-cap"></i>
                 <span>NIT Patna · CSE '29</span>
               </div>
             </div>

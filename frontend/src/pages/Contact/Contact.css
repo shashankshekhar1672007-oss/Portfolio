@@ -189,10 +189,10 @@
 }
 
 .contact-email-card__copy--copied {
-  background: #10b981 !important;
+  background: var(--heading-ink) !important;
   color: #ffffff !important;
-  border-color: #10b981 !important;
-  box-shadow: 0 2px 10px rgba(16, 185, 129, 0.3) !important;
+  border-color: var(--heading-ink) !important;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.25) !important;
 }
 
 /* ─── Location & Education Meta Chips ─── */
